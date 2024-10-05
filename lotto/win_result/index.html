@@ -1,0 +1,385 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <input type="hidden" name="csrfmiddlewaretoken" value="mDBsoDtKwzodUfbrcQu87oX8AivY1GP61aHP0uxHVXZeyvTMYJQbDvDFgO7zypXS">
+
+
+    <link rel="shortcut icon" type="image/png" href="/static-win_result/user_portal/assets/ico.png">
+
+    <title>LOTTO8888</title>
+    <link rel="icon" type="image/x-icon" href="/images/lotto8888.icon">
+
+
+    <link rel="stylesheet" href='/static-win_result/user_portal/css/style.css' type="text/css" />
+
+    <link type="text/css" rel="stylesheet" href="/static-win_result/keno/css/mreset.css">
+    <!--<link type="text/css" rel="stylesheet" href="/static-win_result/keno/css/calendar.css">-->
+    <link type="text/css" rel="stylesheet" href="/static-win_result/keno/css/style.css?ver=137" rel="stylesheet">
+
+    <link rel="stylesheet" href='/static-win_result/keno/css/keno.css?ver=12345' type="text/css" />
+
+    <script src="/static-win_result/keno/js/jquery-2.1.4.min.js"></script>
+    <script src="/static-win_result/keno/js/jquery.cookie.js"></script>
+
+
+    <link rel='stylesheet' href='/static-win_result/user_portal/css/calendar.css'>
+    <link rel='stylesheet' href='/static-win_result/user_portal/css/animate.min.css'>
+    <link rel='stylesheet' href='/static-win_result/user_portal/css/loading.css'>
+    <link rel='stylesheet' href='/static-win_result/user_portal/css/clean-blue.css'>
+    <link rel='stylesheet' href='/static-win_result/user_portal/css/jquery-impromptu.min.css'>
+    <link rel='stylesheet' href='/static-win_result/user_portal/css/impromptu.css'>
+
+    <script src='/static-win_result/user_portal/js/jquery-1.10.2.js'></script>
+    <script src='/static-win_result/user_portal/js/jquery.min.js'></script>
+    <script src='/static-win_result/user_portal/js/jquery-cookie.js'></script>
+    <script src='/static-win_result/user_portal/js/jquery-impromptu.min.js'></script>
+    <script src='/static-win_result/user_portal/js/utils.js?ver=12222'></script>
+    <script src='/static-win_result/user_portal/js/printThis.js'></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-firestore.js"></script>
+
+
+    <script>
+        api = "https://api-keno.sbc369.asia/api/";
+        env = "PROD";
+        currency = "KHR";
+
+        var firebaseConfig;
+
+        if (env == 'DEV')
+
+            firebaseConfig = {
+                apiKey: "AIzaSyAYD5mJTSsggpFqTcr8tFOmaGrHYCWKG-Y",
+                authDomain: "cocks-dev.firebaseapp.com",
+                databaseURL: "https://cocks-dev.firebaseio.com",
+                projectId: "cocks-dev",
+                storageBucket: "cocks-dev.appspot.com",
+                messagingSenderId: "1006353546625",
+                appId: "1:1006353546625:web:9da95dc67c2311e833bc80"
+            };
+        else {
+            firebaseConfig = {
+                apiKey: "AIzaSyDzltYo6-B7wZywYese5MWKgPvaK2sD6lY",
+                authDomain: "cocks-43140.firebaseapp.com",
+                databaseURL: "https://cocks-43140.firebaseio.com",
+                projectId: "cocks-43140",
+                storageBucket: "cocks-43140.appspot.com",
+                messagingSenderId: "107519811824",
+                appId: "1:107519811824:web:2ee1b87a146b17a0"
+            };
+        }
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        db = firebase.firestore();
+
+        db.collection('members').doc('{0}'.format($.cookie("username").toUpperCase()))
+
+            .onSnapshot(function(doc) {
+
+                $("#balance").text(financial(doc.get('balance')) + " (KHR)");
+
+            });
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+    <div id="betLoading" class="loading" style="display:none">Loading&#8230;</div>
+
+    <div>
+
+        <audio controls id="SoundBefore" style="display:none">
+	  		<source src="/static-win_result/keno/sound/prepare_new.mp3" type="audio/mpeg">
+		</audio>
+
+        <audio controls id="SoundNo" style="display:none">
+	  		<source src="/static-win_result/keno/sound/sound_no_new.mp3" type="audio/mpeg">
+		</audio>
+
+        <audio controls id="SoundAfter" style="display:none">
+	  		<source src="/static-win_result/keno/sound/after_new.mp3" type="audio/mpeg">
+		</audio>
+
+        <div id="main">
+
+            <div style="display:none;">
+                <div class="invoice"></div>
+            </div>
+
+            <!-- Header Section -->
+            <table border="0" cellpadding="0" cellspacing="0" id="header" style="width:100%;min-width:1736px">
+                <tbody>
+                    <tr>
+                        <td class="logo" rowspan="2" style="padding-top:0px;box-sizing:content-box;">
+                            <div><img src="/images/logo.png" class="login_icons" /></div>
+                        </td>
+                        <td height="50">
+                            <div class="user_wel">
+                                Welcome,<span id="spanLoginID"></span><span id="balance" style="padding-left:5px;color:#8000FF;font-weight: bold;"></span>
+                            </div>
+                            <ul class="lang">
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('en')">English</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('kh')">ខ្មែរ</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('th')">ไทย</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('vn')">Tiếng Việt</a></li>
+
+                            </ul>
+                        </td>
+                        <td class="logout" rowspan="2" id="tdLiveChat">
+                            <a href="/" class="btn_logout" style="color: #fff; padding: 20px; cursor: pointer;">Logout</a>
+                        </td>
+                    </tr>
+                    <!-- Text Maquess -->
+                    <tr>
+                        <td class="marquee" id="mar_news">
+                            <!--<marquee direction="left" id="spShowNews" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">-->
+                            <!--Dear Valued Partner:  Kindly to be informed that your member has been involved in an abnormal betting. Hence, the affected ticket will be canceled. Thank you!   Match :  FC Samtredia (N) -vs- FC Aragvi Dusheti  Member ID : A8EEACAA029 SSLLSSCC622  Ticket : 4 Tickets  Kindly refer to agent site &#x27;&#x27;Cancelled Bets&#x27;&#x27; for more details. Thank you
+ដៃគូដ៏មានតម្លៃ៖ សូមជម្រាបជូនថា សមាជិករបស់អ្នកបានចូលរួមនៅក្នុងការភ្នាល់មិនប្រក្រតី។ ដូច្នេះសំបុត្រដែលរងផលប៉ះពាល់នឹងត្រូវលុបចោល។ សូមអរគុណ! ការប្រកួត : FC Samtredia (N) -vs- FC Aragvi Dusheti លេខសម្គាល់សមាជិក : A8EEACAA029 SSLLSSCC622 សំបុត្រ : 4 សំបុត្រ សូមចូលទៅកាន់គេហទំព័រភ្នាក់ងារ &#x27;&#x27;ការភ្នាល់ដែលបានលុបចោល&#x27;&#x27; សម្រាប់ព័ត៌មានលម្អិតបន្ថែម។ សូមអរគុណ
+尊敬的合作伙伴： 谨此告知您的会员涉及异常投注。 因此，受影响的机票将被取消。 谢谢你！ 比赛：FC Samtredia (N) -vs- FC Aragvi Dusheti 会员 ID：A8EEACAA029 SSLLSSCC622 门票：4 张门票 请参阅代理网站“取消投注”了解更多详情。 谢谢-->
+                            <!--</marquee>-->
+                        </td>
+                    </tr>
+                    <!-- // text Maquse-->
+
+                    <!--    <tr>-->
+                    <!--         <div id="footer">-->
+                    <!--<p class="copyright">© Copyright 2010-2018 AA2888, All rights reserved</p>-->
+                    <!--  </div>-->
+                    <!--    </tr>-->
+
+                </tbody>
+            </table>
+            <!--  // Header Section -->
+            <!-- main menu -->
+            <div id="navigator">
+                <ul class="nav" id="nav">
+
+                    <li><a id="tabhome" href="/home/">ដំណឹង</a></li>
+                    <li><a id="tablotto" href="/lotto/">ឡូតូ</a></li>
+                    <li><a id="tabbalance" href="/sport/balance/">តុល្យភាព</a></li>
+                    <li><a id="tabstatement" href="/sport/statement/">របាយការណ៏</a></li>
+                    <li><a id="tabpassword" href="/sport/password/">លេខសម្ងាត់ </a></li>
+
+                </ul>
+            </div>
+            <!-- // main menu -->
+
+        </div>
+
+        <div class="main-content" id="main-content" style="position:relative;">
+
+
+
+            <div id="navigator" style="width:100%;min-width:1736px">
+                <ul class="sub">
+                    <li><a href="/lotto/">ឡូតូ</a></li>
+                    <li><a href="/lotto/win_result/" class="hover">របាយការណ៏នៃការឈ្នះ</a></li>
+                    <li><a href="/lotto/win_result_v1/">របាយការណ៏នៃការឈ្នះ 1</a></li>
+                    <li><a href="/lotto/results/">លទ្ឋផល</a></li>
+                    <!--<li><a href="/lotto/rules/">Rules</a></li>-->
+                </ul>
+
+            </div>
+
+            <div class="main_sport_content">
+
+                <table border="0" cellpadding="0" cellspacing="0" class="control_table">
+                    <tbody>
+                        <tr>
+                            <td height="30" valign="middle">
+                                <div style="text-align:left">
+                                    From Date<span class="datepicker_wrap"><input id="txtDateFrom" type="text" size="10"/> </span> To Date<span class="datepicker_wrap"><input id="txtDateTo" type="text" size="10"/> </span> &nbsp;
+                                    <span id="spanSearchType">Bet Type&nbsp;
+						<select id="selType" style="height:16pt;font-size:9pt;width:100px">
+							<option value="">All</option>
+							<option value="1">Over</option>
+							<option value="2">Under</option>
+							<option value="3">Odd</option>
+							<option value="4">Even</option>
+							<option value="5">OverOdd</option>
+							<option value="6">UnderOdd</option>
+							<option value="7">OverEven</option>
+							<option value="8">UnderEven</option>
+							<option value="11">210-695</option>
+							<option value="12">696-763</option>
+							<option value="13">764-855</option>
+							<option value="14">856-923</option>
+							<option value="15">924-1410</option>
+							<option value="21">Min1-2</option>
+							<option value="22">Min3-5</option>
+							<option value="23">Min&gt;=6</option>
+							<option value="31">Max&lt;=75</option>
+							<option value="32">Max76-78</option>
+							<option value="33">Max79-80</option>
+							<option value="111">[1-10] 1</option>
+							<option value="112">[1-10] 2-3</option>
+							<option value="113">[1-10] 4+</option>
+							<option value="114">[1-10] 0</option>
+							<option value="121">[11-20] 1</option>
+							<option value="122">[11-20] 2-3</option>
+							<option value="123">[11-20] 4+</option>
+							<option value="124">[11-20] 0</option>
+							<option value="131">[21-30] 1</option>
+							<option value="132">[21-30] 2-3</option>
+							<option value="133">[21-30] 4+</option><option value="134">[21-30] 0</option><option value="141">[31-40] 1</option><option value="142">[31-40] 2-3</option><option value="143">[31-40] 4+</option><option value="144">[31-40] 0</option><option value="151">[41-50] 1</option><option value="152">[41-50] 2-3</option><option value="153">[41-50] 4+</option><option value="154">[41-50] 0</option><option value="161">[51-60] 1</option><option value="162">[51-60] 2-3</option><option value="163">[51-60] 4+</option><option value="164">[51-60] 0</option><option value="171">[61-70] 1</option><option value="172">[61-70] 2-3</option><option value="173">[61-70] 4+</option><option value="174">[61-70] 0</option><option value="181">[71-80] 1</option><option value="182">[71-80] 2-3</option><option value="183">[71-80] 4+</option><option value="184">[71-80] 0</option></select>&nbsp;&nbsp;</span>&nbsp;
+                                    <select id="selDG" style="height:16pt;font-size:9pt;display: none">
+							<option value="1">Detail</option>
+							<option value="2">Group</option>
+						</select>&nbsp;
+                                    <input id="btnGetResult" type="button" class="button1" value="Get Result" />
+                                    <input id="btnReturnGroup" type="button" class="button1" value="Return" style="display:none">
+                                    <input type="hidden" id="txtHiddenPage" value="0">
+                                    <input type="hidden" value="150" id="txtHiddenMrkt">
+                                    <input type="hidden" id="txtHiddenLayer" value="0">
+                                    <input type="hidden" id="txtHiddenTable" value="0">
+                                    <input type="hidden" id="txtHiddenShoe">
+                                    <input type="hidden" id="txtHiddenType">
+                                    <input type="hidden" id="txtHiddenCurrency">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="divLoading"><img src="/static-win_result/user_portal/assets/loadingAnimation.gif"></div>
+                <div id="divReportWin">
+                    <table id="tblMain" width="100%" border="1" align="center" cellpadding="0" cellspacing="0" class="main_table">
+                        <thead>
+                            <tr class="main_table_header">
+                                <th>No</th>
+                                <th nowrap="">Order No</th>
+                                <th nowrap="">Bet Time</th>
+                                <th nowrap="">Report Date</th>
+                                <th nowrap="">Name</th>
+                                <th nowrap="">Login ID</th>
+                                <td>Game</td>
+                                <td>Round</td>
+                                <td>Result</td>
+                                <th nowrap="">Bet Type</th>
+                                <th nowrap="">Currency</th>
+                                <th nowrap="">Bet</th>
+                                <th nowrap="">Bet Amount</th>
+                                <th nowrap="">Odds</th>
+                                <th nowrap="">Bonus</th>
+                                <th nowrap="">WinLose</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-result">
+
+                        </tbody>
+                        <tfoot id="fbody-result">
+                            <!--	<tr class="main_table_foonterT">-->
+                            <!--		<td colspan="9">Total</td>-->
+                            <!--		<td align="right">0.00</td>-->
+                            <!--	</tr>-->
+                        </tfoot>
+                    </table>
+                    <table id="tblFooter" border="0" cellpadding="0" cellspacing="1" class="main_table">
+                        <tbody>
+                            <tr class="main_table_even">
+                                <td align="center">0&nbsp;Record(s)&nbsp;&nbsp;&nbsp;0/0&nbsp;Page(s)&nbsp;&nbsp;&nbsp;
+                                    <a id="lnkFooterFirst" href="javascript:void(0)" class="link1">First</a>&nbsp;&nbsp;
+                                    <a id="lnkFooterPrev" href="javascript:void(0)" class="link1">Prev</a>&nbsp;&nbsp;
+                                    <a id="lnkFooterNext" href="javascript:void(0)" class="link1">Next</a>&nbsp;&nbsp;
+                                    <a id="lnkFooterLast" href="javascript:void(0)" class="link1">Last</a>&nbsp;&nbsp;
+                                    <input id="txtJump" size="2" maxlength="3" class="input2">&nbsp;
+                                    <a id="lnkFooterJump" href="javascript:void(0)" class="link1">Jump</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div id="betdetail" class="bet_detail_pop" style="display:none;position:absolute;width:300px;height:407px;min-height:407px!important;">
+
+                    <div id="betdetalheader" class="betdetailheader">
+                        <span id="parlay_title">Jackpot</span>
+                        <div style="text-align:right;float:right;line-height:20px;">
+                            <a href="javascript:void(0)" style="color:#fff;font-weight:normal;" onclick="close_betdetail()">Close</a>
+                        </div>
+                    </div>
+
+                    <table border="1" align="center" cellpadding="0" cellspacing="0" class="main_table">
+                        <thead>
+
+                            <tr class="main_table_sport_header">
+                                <th class="main_table_sport_header2" style="font-size:13px;width:80px">Hits</th>
+                                <th class="main_table_sport_header2" style="font-size:13px;width:200px">Num</th>
+                                <th class="main_table_sport_header2" style="font-size:13px;width:50px">Odd</th>
+                                <th class="main_table_sport_header2" style="font-size:13px;width:50px">Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                    </table>
+
+                    <div id="divLoadingDetail"><img src="/static-win_result/user_portal/assets/loadingAnimation.gif"></div>
+
+                    <div id="tdetail">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div id="divLoadingCircle" class="loading" style="display:none">Loading&#8230;</div>
+
+            <div id="divLoading" style="display: none;"><img src="/static-win_result/user_portal/assets/loadingAnimation.gif"></div>
+
+            <div id="footer" style="z-index:5">
+                
+                <p class="copyright">© Copyright 2020 Lotto8888, All rights reserved </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src='/static-win_result/user_portal/js/moment.js'></script>
+    <script src='/static-win_result/user_portal/js/default.js'></script>
+    <script src='/static-win_result/user_portal/js/jquery.noty.packaged.min.js'></script>
+
+    <script src="/static-win_result/user_portal/js/js.cookie.js" type="text/javascript"></script>
+    <script src='/static-win_result/user_portal/js/language.js?ver=5'></script>
+
+
+
+    <script>
+        var lang = "en";
+        api = "https://api-keno.sbc369.asia/api/";
+
+        $('#navigator .nav').removeClass('hover');
+        $('#tablotto').addClass("hover");
+    </script>
+
+    <script src="/static-win_result/user_portal/js/jquery.calendar.3.4.js" type="text/javascript"></script>
+    <script src="/static-win_result/lotto/js/win_report.js?ver=13222asdfaasdfass" type="text/javascript"></script>
+    <script src="/static-win_result/user_portal/collape/jquery.collapsable.js"></script>
+
+    <script src="/getUsername.js"></script>
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,258 @@
+/* Main Style Sheet for jQuery UI date picker */
+
+a,
+a:hover {
+    cursor: pointer;
+}
+
+.hasDatepicker {
+    width: 80px;
+    padding: 0 3px;
+}
+
+#datepicker_div,
+.datepicker_inline {
+    width: 185px;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    background-color: #faf8f8;
+}
+
+#datepicker_div {
+    display: none;
+    z-index: 9999;
+    /*must have*/
+    width: 186px !important;
+    border: solid 3px #c3c8cb;
+}
+
+.datepicker_inline {
+    float: left;
+    display: block;
+    border: 0;
+}
+
+.datepicker_rtl {
+    direction: rtl;
+}
+
+.datepicker_dialog {
+    padding: 5px !important;
+    border: 4px ridge #ddd !important;
+}
+
+button.datepicker_trigger {
+    width: 25px;
+}
+
+img.datepicker_trigger {
+    margin: 2px;
+    margin-top: -2px !important;
+    margin-top: -4px;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.datepicker_prompt {
+    float: left;
+    padding: 2px;
+    background: #ddd;
+    color: #000;
+}
+
+* html .datepicker_prompt {
+    width: 185px;
+}
+
+.datepicker_control,
+.datepicker_links,
+.datepicker_header,
+.datepicker {
+    width: 100%;
+}
+
+.datepicker_control,
+.datepicker_links {
+    height: 22px;
+    line-height: 22px;
+}
+
+.datepicker_links {
+    background-color: #cd211e;
+}
+
+.datepicker_links a {
+    color: #ffffff;
+}
+
+.datepicker_control,
+.datepicker_links {}
+
+.datepicker_links label {
+    /* disabled links */
+    padding: 2px 5px;
+    color: #888;
+}
+
+.datepicker_clear,
+.datepicker_prev,
+.datepicker_current,
+.datepicker_rtl .datepicker_close,
+.datepicker_rtl .datepicker_next {
+    float: left;
+}
+
+.datepicker_close,
+.datepicker_next,
+.datepicker_rtl .datepicker_clear,
+.datepicker_rtl .datepicker_pre {
+    float: right;
+}
+
+.datepicker_clear,
+.datepicker_prev,
+.datepicker_close,
+.datepicker_next {
+    min-width: 26%;
+}
+
+.datepicker_clear a,
+.datepicker_close a {
+    text-decoration: underline;
+}
+
+.datepicker_current {
+    width: 46%;
+}
+
+.datepicker_header {
+    background-color: #faeaec;
+}
+
+.datepicker_header select {
+    border-color: #faeaec;
+    background-color: transparent;
+    outline: none;
+}
+
+.datepicker {
+    background: #ccc;
+    text-align: center;
+    font-size: 12px;
+    border-collapse: collapse;
+}
+
+.datepicker td {
+    height: 20px;
+    width: 26px;
+}
+
+.datepicker a {
+    display: block;
+    width: 100%;
+}
+
+.datepicker_titleRow,
+.datepicker_titleRow .datepicker_weekEndCell {
+    background-color: #828282;
+}
+
+.datepicker_daysRow {
+    background-color: #f9fbfb;
+    color: #666;
+}
+
+.datepicker_weekEndCell {
+    background-color: #f8f5f6;
+}
+
+.datepicker_weekCol {
+    background: #777;
+    color: #fff;
+}
+
+.datepicker_daysCell {
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+.datepicker_daysCell a {
+    display: block;
+}
+
+.datepicker_daysCellOver {
+    background-color: #ffe8e8;
+}
+
+.datepicker_unselectable {
+    color: #888;
+}
+
+.datepicker_today {
+    background: #ffcccc !important;
+}
+
+.datepicker a {
+    color: #000;
+    font-weight: normal;
+}
+
+.datepicker_currentDay a {
+    font-weight: bold;
+}
+
+.datepicker_status {
+    background: #ddd;
+    width: 100%;
+    font-size: 80%;
+    text-align: center;
+}
+
+/* ________ Datepicker Links _______
+
+** Reset link properties and then override them with !important */
+
+.datepicker_inline .datepicker_links a {
+    padding: 0 5px !important;
+}
+
+.datepicker_titleRow a {
+    color: #eee !important;
+}
+
+/* ___________ MULTIPLE MONTHS _________*/
+
+.datepicker_multi .datepicker {
+    border: 1px solid #777;
+}
+
+.datepicker_oneMonth {}
+
+.datepicker_newRow {
+    clear: left;
+}
+
+/* ___________ IE6 IFRAME FIX ________ */
+
+.datepicker_cover {
+    display: none;
+    /*sorry for IE5*/
+    display/**/
+    : block;
+    /*sorry for IE5*/
+    position: absolute;
+    /*must have*/
+    z-index: -1;
+    /*must have*/
+    filter: mask();
+    /*must have*/
+    top: -4px;
+    /*must have*/
+    left: -4px;
+    /*must have*/
+    width: 200px;
+    /*must have*/
+    height: 200px;
+    /*must have*/
+}

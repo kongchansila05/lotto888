@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@font-face {
+    font-family: myfont;
+    src: url(fonts/fonts.ttf);
+}
+body{
+    font-family: "Battambang", system-ui;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #dee2e5;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1920px;
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        display: block;
+    }
+}
+
+.login-container {
+    background-color: #004f8350;
+    max-width: 500px;
+    width: 100%;
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .login-container {
+        margin: 0 auto;
+        height: 100% !important;
+    }
+}
+
+.login-container .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.login-container .logo .logo-img {
+    width: 170px;
+}
+
+@media only screen and (max-width: 768px) {
+    .login-container .logo .logo-img {
+        width: 120px;
+    }
+}
+
+.login-container .logo .login {
+    width: 300px;
+}
+
+@media only screen and (max-width: 768px) {
+    .login-container .logo .login {
+        width: 200px;
+    }
+}
+
+.login-container form {
+    padding: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.login-container form>label {
+    font-family: "Poppins", "Battambang", sans-serif;
+    text-transform: uppercase;
+    color: #004f83;
+    font-weight: 600;
+}
+
+.login-container form input[type=text],
+.login-container form input[type=password] {
+    font-weight: 600;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    padding-left: 60px;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.568);
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none;
+    color: #004f83;
+}
+
+.login-container form input[type=text]:focus,
+.login-container form input[type=password]:focus {
+    background-color: #fff;
+}
+
+.login-container form input[type=text]::-webkit-input-placeholder,
+.login-container form input[type=password]::-webkit-input-placeholder {
+    font-size: 16px;
+    color: #004f83;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.login-container form input[type=text]:-ms-input-placeholder,
+.login-container form input[type=password]:-ms-input-placeholder {
+    font-size: 16px;
+    color: #004f83;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.login-container form input[type=text]::-ms-input-placeholder,
+.login-container form input[type=password]::-ms-input-placeholder {
+    font-size: 16px;
+    color: #004f83;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.login-container form input[type=text]::placeholder,
+.login-container form input[type=password]::placeholder {
+    font-size: 16px;
+    color: #004f83;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.login-container form .input-wrap {
+    width: 100%;
+    position: relative;
+}
+
+.login-container form .input-wrap span {
+    background-color: #004f83;
+    color: #fff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 52px;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.login-container form .input-wrap span svg {
+    width: 18px;
+}
+
+.login-container form button {
+    cursor: pointer;
+    font-family: "Poppins", "Battambang", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 20px;
+    border: none;
+    background-color: #004f83;
+    color: #fff;
+    padding: 5px 30px;
+    border-radius: 30px;
+    margin: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.login-container form .bottom-text {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 20px;
+    color: #004f83;
+}
+
+.login-container form .bottom-text span {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.login-container form .bottom-text span label {
+    font-family: "Poppins", "Battambang", sans-serif;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.image-left,
+.image-right {
+    width: 100%;
+    padding: 20px;
+    position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+    .image-left,
+    .image-right {
+        display: none;
+    }
+}
+
+.image-left .img,
+.image-right .img {
+    position: absolute;
+    max-width: 400px;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.mobile-img {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    gap: 20px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+    .mobile-img {
+        display: none;
+    }
+}
+
+.mobile-img img {
+    width: 35vw;
+}
+
+/*# sourceMappingURL=index.css.map */

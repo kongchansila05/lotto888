@@ -1,0 +1,632 @@
+body {
+    color: #000 !important;
+    background-color: #f3f3f3 !important;
+}
+
+.control_table {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    margin: 0;
+    text-align: left;
+    overflow: hidden;
+}
+
+.control_table input,
+.control_table select {
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.control_table {
+    color: #27448c;
+}
+
+#right {
+    margin-top: 30px;
+}
+
+/*------------------------------------------------table------------------------------------------------*/
+
+.main_table_g {
+    margin: 5px 0 0 5px;
+}
+
+.main_table {
+    width: 100%;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main_table2 {
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    width: 450px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.main_table_header {
+    text-decoration: none;
+    font-weight: bold;
+    height: 25px;
+    font-size: 13px;
+}
+
+.main_table_header2 {
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: bold;
+    height: 42px;
+}
+
+.main_table_header_dark {
+    text-decoration: none;
+    font-weight: bold;
+    height: 21px;
+    font-size: 13px;
+}
+
+.main_table_title {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.main_table_foonter {
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 21px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.main_table_foonterT {
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 21px;
+    text-align: center;
+}
+
+.main_table_foonterGT {
+    font-size: 13px;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 21px;
+    text-align: center;
+}
+
+.main_table_odd,
+.main_table_even {
+    height: 23px;
+}
+
+.main_table_odd2,
+.main_table_odd3,
+.main_table_even2,
+.main_table_even3 {
+    height: 25px;
+}
+
+.main_table_odd3,
+.main_table_even3 {
+    text-align: left;
+    padding-left: 90px;
+}
+
+.main_table_modified {
+    height: 21px;
+}
+
+.main_table_modified2 {
+    height: 21px;
+}
+
+.main_table_cancelled {
+    height: 21px;
+}
+
+.control_table {
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    margin: 0;
+    text-align: left;
+    overflow: hidden;
+}
+
+.control_table input,
+.control_table select {
+    margin-left: 2px;
+    vertical-align: middle;
+}
+
+.control_fav {
+    height: 20px;
+    padding: 8px 3px 3px 3px;
+    text-align: left;
+}
+
+.control_fav .cont_date,
+.control_fav .cont_sel,
+.control_fav .sel_wrap,
+.control_fav .cont_btn {
+    float: left;
+    margin-right: 10px;
+}
+
+.control_fav input,
+.control_fav select,
+.control_fav label,
+.control_fav img {
+    margin: 0;
+    font-family: Arial;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.control_fav input {
+    height: 21px;
+    margin: 0 2px;
+}
+
+.control_fav select.cont_sel {
+    width: 75px;
+    _width: auto;
+    height: 21px;
+}
+
+.control_fav .cont_date {
+    margin-right: 10px;
+    _margin-top: -2px;
+}
+
+.control_fav a.sel_wrap {
+    display: inline-block;
+    width: 95px;
+    _width: 105px;
+    height: 19px;
+    line-height: 19px;
+    text-align: center;
+    padding: 0 10px 0 0;
+    border-style: none;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.control_fav .cont_btn {
+    width: 72px;
+    margin-right: 5px;
+    padding-bottom: 1px;
+    border-style: none;
+    font-weight: bold;
+    height: 21px;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+select.select1 {
+    height: 22px;
+}
+
+.info_table {
+    text-decoration: none;
+    text-align: left;
+    font-size: 12px;
+    color: #27448c;
+    margin: 0px;
+    padding: 0px;
+}
+
+.redFont {
+    color: #ff0000;
+}
+
+.greenFont {
+    color: #006600;
+}
+
+.blueFont {
+    color: #00F;
+}
+
+.blackFont {
+    color: #000;
+}
+
+.acceptedFont {
+    color: brown;
+}
+
+.purchasedFont {
+    color: #8A2BE2;
+}
+
+.goldFont {
+    color: #27448c;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+h3.subHeader {
+    text-align: center;
+    font-size: 11px;
+}
+
+.lottotr_trade {
+    width: 21px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.lottotr_trade_price {
+    font-size: 12px;
+    width: 21px;
+}
+
+.table_poker {
+    width: 100%;
+}
+
+.table_poker tr:nth-child(1) td img {
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -moz-transform: rotate(90deg);
+    /* Firefox */
+    -webkit-transform: rotate(90deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(90deg);
+    /* Opera */
+}
+
+input.read_only {
+    border: none;
+    background: transparent;
+    text-align: right;
+}
+
+.main_table {
+    /*background-color: #96afde;*/
+    /*border: 5px solid #ffffff;*/
+    clear: left;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    padding: 0px;
+    border: 1px solid #96afde;
+    background-color: #96afde;
+}
+
+.main_table th a {
+    color: #ffffff;
+}
+
+.main_table .main_jtip_title a:hover,
+.main_table .main_jtip_title a:link {
+    color: #ffc709;
+}
+
+.main_table2 {
+    border: 5px solid #ffffff;
+    background-color: #96afde;
+}
+
+.main_table_header {
+    background-color: #8000FF;
+    color: #FFF;
+}
+
+.main_table_header2 {
+    color: #FFF;
+    background-color: #8000FF;
+}
+
+.main_table_header_dark {
+    color: #FFF;
+}
+
+.main_table_title {
+    color: #19377d;
+    background-color: #e8eefb;
+}
+
+.main_table_footer {
+    color: #000;
+    background-color: #e8edf3;
+}
+
+.main_table_foonterT {
+    color: #000;
+    background-color: #7d9bd7;
+}
+
+.main_table_foonterGT {
+    color: #000;
+    background-color: #8000FF;
+}
+
+.main_table_odd,
+.main_table_even {
+    background-color: #ffffff;
+}
+
+.main_table_odd2,
+.main_table_odd3,
+.main_table_even2,
+.main_table_even3 {
+    background-color: #ffffff;
+}
+
+.main_table_modified {
+    background-color: #ffcccc;
+}
+
+.main_table_modified2 {
+    background-color: #ffccff;
+}
+
+.main_table_cancelled {
+    background-color: #999;
+}
+
+.control_table {
+    color: #27448c;
+}
+
+.control_fav a.sel_wrap,
+.control_fav .cont_btn {
+    color: #002b73;
+    background-color: #ffffff;
+    border: solid 1px #5a6c8a;
+}
+
+.info_table {
+    color: #27448c;
+}
+
+h3.subHeader {
+    color: #27448c;
+}
+
+.lottotr_trade_font {
+    background-color: #FFFF33;
+}
+
+.lottotr_trade {
+    color: #27448c;
+}
+
+.redBackground {
+    background-color: #E788F7;
+}
+
+a:link,
+a:visited {
+    color: #aaa;
+}
+
+a:link {
+    color: #00F;
+}
+
+.main_sport_content {
+    /*margin-top: 27px;*/
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+    /*min-width: 1200px;*/
+    width: 100%;
+    /*padding-bottom: 170px;*/
+}
+
+#main-content {
+    width: 100%;
+    /* height: 120px; */
+    height: 100%;
+    position: fixed;
+    text-align: left;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    position: absolute;
+}
+
+/* CSS Modal Bet */
+
+.modal-bet {
+    /*float: left;*/
+    /*width: 309px;*/
+    /*height: 345px;*/
+    /*background-color: #33333333;*/
+    /*position: absolute;*/
+    /*margin-top: 15px;*/
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.modal-bet.hide {
+    display: none;
+}
+
+.modal-bet .content-modal {
+    width: 309px;
+    height: 345px;
+    /*background-color: #ffffff;*/
+    /*border-radius: 7px;*/
+    /*box-shadow: 0px 0px 15px #000000;*/
+    /*margin-top: calc(50% - 255px);*/
+    display: block;
+    position: relative;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border-radius: 7px;
+    box-shadow: 0px 0px 15px #000000;
+    margin-top: calc(50% - 255px);
+}
+
+.content-modal .title-bar {
+    height: 40px;
+    line-height: 40px;
+    padding: 0px 10px;
+    background-color: #2e3192;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.content-modal .title-bar .content-left,
+.content-modal .title-bar .content-right {
+    float: left;
+    width: 50%;
+}
+
+.content-modal .title-bar .content-left span.card-id {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.content-modal .title-bar .content-right {
+    text-align: right;
+}
+
+.content-modal .title-bar .content-right span.close-tab {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #bc1e2d;
+    padding: 5px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.content-modal .content-detail .content-left,
+.content-modal .content-detail .content-right {
+    float: left;
+    width: calc(50% - 20px);
+    padding: 3px 10px;
+    text-align: center;
+}
+
+.content-modal .content-detail .content-center {
+    float: left;
+    width: calc(100% - 20px);
+    padding: 3px 10px;
+    text-align: center;
+}
+
+.content-modal .content-detail .row span {
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.content-modal .content-bet {
+    background-color: #2e3192;
+    height: 173px;
+    margin: 0px 10px;
+    border-radius: 7px;
+}
+
+.content-modal .content-bet .content-left,
+.content-modal .content-bet .content-right {
+    float: left;
+    width: calc(50% - 20px);
+    text-align: center;
+    padding: 10px;
+}
+
+.content-modal .content-bet .content-left {
+    text-align: left;
+    color: #ffffff;
+    line-height: 25px;
+    height: 0px;
+}
+
+.content-modal .content-bet .content-right input {
+    width: calc(100% - 10px);
+    border: 1px solid #333333;
+    padding: 5px;
+    display: block;
+    position: relative;
+}
+
+.keno-bet-modal .wraper-bet .button-bet {
+    float: left;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    margin: 3px 7px;
+    background-color: #8000FF;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 2px 2px 3px #2F4C81;
+}
+
+.keno-bet-modal .wraper-bet .button-bet span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.content-modal .form-button .content-left,
+.content-modal .form-button .content-right {
+    float: left;
+    width: calc(50% - 20px);
+    padding: 0px 10px;
+    text-align: center;
+}
+
+.content-modal .form-button button {
+    width: 80px;
+    height: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.content-modal .form-button button.btn-bet {
+    background-color: #2e3192;
+    border: 1px solid #2e3192;
+}
+
+.content-modal .form-button button.btn-reset {
+    background-color: #a71f2d;
+    border: 1px solid #a71f2d;
+}
+
+/* End CSS Modal Bet */
+
+.close-tab {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #bc1e2d;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 271px;
+    display: block;
+    position: fixed;
+    margin-top: -34px;
+    width: 30px;
+    height: 26px;
+    padding-left: 10px;
+}

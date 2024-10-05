@@ -1,0 +1,295 @@
+<html>
+
+<head>
+
+    <input type="hidden" name="csrfmiddlewaretoken" value="wR5voUpYmPJy2nYm6l6MntjEDUhcXv53bobS0LtVLdkzGDGHSesPTAZbjqTNuedP">
+
+
+    <link rel="shortcut icon" type="image/png" href="/static-result/user_portal/assets/ico.png">
+    <meta charset="UTF-8">
+
+
+
+    <link rel="stylesheet" href='/static-result/user_portal/css/style.css' type="text/css" />
+
+    <link type="text/css" rel="stylesheet" href="/static-result/keno/css/mreset.css">
+    <!--<link type="text/css" rel="stylesheet" href="/static-result/keno/css/calendar.css">-->
+    <link type="text/css" rel="stylesheet" href="/static-result/keno/css/style.css?ver=137" rel="stylesheet">
+
+    <link rel="stylesheet" href='/static-result/keno/css/keno.css?ver=12345' type="text/css" />
+
+    <script src="/static-result/keno/js/jquery-2.1.4.min.js"></script>
+    <script src="/static-result/keno/js/jquery.cookie.js"></script>
+
+
+    <link rel='stylesheet' href='/static-result/user_portal/css/calendar.css'>
+    <link rel='stylesheet' href='/static-result/user_portal/css/animate.min.css'>
+    <link rel='stylesheet' href='/static-result/user_portal/css/loading.css'>
+    <link rel='stylesheet' href='/static-result/user_portal/css/clean-blue.css'>
+    <link rel='stylesheet' href='/static-result/user_portal/css/jquery-impromptu.min.css'>
+    <link rel='stylesheet' href='/static-result/user_portal/css/impromptu.css'>
+
+    <script src='/static-result/user_portal/js/jquery-1.10.2.js'></script>
+    <script src='/static-result/user_portal/js/jquery.min.js'></script>
+    <script src='/static-result/user_portal/js/jquery-cookie.js'></script>
+    <script src='/static-result/user_portal/js/jquery-impromptu.min.js'></script>
+    <script src='/static-result/user_portal/js/utils.js?ver=12222'></script>
+    <script src='/static-result/user_portal/js/printThis.js'></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-firestore.js"></script>
+
+
+    <script>
+        api = "https://api-keno.sbc369.asia/api/";
+        env = "PROD";
+        currency = "KHR";
+
+        var firebaseConfig;
+
+        if (env == 'DEV')
+
+            firebaseConfig = {
+                apiKey: "AIzaSyAYD5mJTSsggpFqTcr8tFOmaGrHYCWKG-Y",
+                authDomain: "cocks-dev.firebaseapp.com",
+                databaseURL: "https://cocks-dev.firebaseio.com",
+                projectId: "cocks-dev",
+                storageBucket: "cocks-dev.appspot.com",
+                messagingSenderId: "1006353546625",
+                appId: "1:1006353546625:web:9da95dc67c2311e833bc80"
+            };
+        else {
+            firebaseConfig = {
+                apiKey: "AIzaSyDzltYo6-B7wZywYese5MWKgPvaK2sD6lY",
+                authDomain: "cocks-43140.firebaseapp.com",
+                databaseURL: "https://cocks-43140.firebaseio.com",
+                projectId: "cocks-43140",
+                storageBucket: "cocks-43140.appspot.com",
+                messagingSenderId: "107519811824",
+                appId: "1:107519811824:web:2ee1b87a146b17a0"
+            };
+        }
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        db = firebase.firestore();
+
+        db.collection('members').doc('{0}'.format($.cookie("username").toUpperCase()))
+
+            .onSnapshot(function(doc) {
+
+                $("#balance").text(financial(doc.get('balance')) + " (KHR)");
+
+            });
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+    <div id="betLoading" class="loading" style="display:none">Loading&#8230;</div>
+
+    <div>
+
+        <audio controls id="SoundBefore" style="display:none">
+	  		<source src="/static-result/keno/sound/prepare_new.mp3" type="audio/mpeg">
+		</audio>
+
+        <audio controls id="SoundNo" style="display:none">
+	  		<source src="/static-result/keno/sound/sound_no_new.mp3" type="audio/mpeg">
+		</audio>
+
+        <audio controls id="SoundAfter" style="display:none">
+	  		<source src="/static-result/keno/sound/after_new.mp3" type="audio/mpeg">
+		</audio>
+
+        <div id="main">
+
+            <div style="display:none;">
+                <div class="invoice"></div>
+            </div>
+
+            <!-- Header Section -->
+            <table border="0" cellpadding="0" cellspacing="0" id="header" style="width:100%;min-width:1736px">
+                <tbody>
+                    <tr>
+                        <td class="logo" rowspan="2" style="padding-top:0px;box-sizing:content-box;">
+                            <div><img src="/static-result/lotto/images/logo.png" class="login_icons" /></div>
+                        </td>
+                        <td height="50">
+                            <div class="user_wel">
+                                Welcome,<span id="spanLoginID">LAMMFFHT001</span><span id="balance" style="padding-left:5px;color:#8000FF;font-weight: bold;"></span>
+                            </div>
+                            <ul class="lang">
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('en')">English</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('kh')">ខ្មែរ</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('th')">ไทย</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('vn')">Tiếng Việt</a></li>
+
+                            </ul>
+                        </td>
+                        <td class="logout" rowspan="2" id="tdLiveChat">
+                            <a href="/logout/" class="btn_logout" style="color: #fff; padding: 20px; cursor: pointer;">Logout</a>
+                        </td>
+                    </tr>
+                    <!-- Text Maquess -->
+                    <tr>
+                        <td class="marquee" id="mar_news">
+                            <!--<marquee direction="left" id="spShowNews" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">-->
+                            <!--Dear Valued Partner:  Kindly to be informed that your member has been involved in an abnormal betting. Hence, the affected ticket will be canceled. Thank you!   Match :  FC Samtredia (N) -vs- FC Aragvi Dusheti  Member ID : A8EEACAA029 SSLLSSCC622  Ticket : 4 Tickets  Kindly refer to agent site &#x27;&#x27;Cancelled Bets&#x27;&#x27; for more details. Thank you
+ដៃគូដ៏មានតម្លៃ៖ សូមជម្រាបជូនថា សមាជិករបស់អ្នកបានចូលរួមនៅក្នុងការភ្នាល់មិនប្រក្រតី។ ដូច្នេះសំបុត្រដែលរងផលប៉ះពាល់នឹងត្រូវលុបចោល។ សូមអរគុណ! ការប្រកួត : FC Samtredia (N) -vs- FC Aragvi Dusheti លេខសម្គាល់សមាជិក : A8EEACAA029 SSLLSSCC622 សំបុត្រ : 4 សំបុត្រ សូមចូលទៅកាន់គេហទំព័រភ្នាក់ងារ &#x27;&#x27;ការភ្នាល់ដែលបានលុបចោល&#x27;&#x27; សម្រាប់ព័ត៌មានលម្អិតបន្ថែម។ សូមអរគុណ
+尊敬的合作伙伴： 谨此告知您的会员涉及异常投注。 因此，受影响的机票将被取消。 谢谢你！ 比赛：FC Samtredia (N) -vs- FC Aragvi Dusheti 会员 ID：A8EEACAA029 SSLLSSCC622 门票：4 张门票 请参阅代理网站“取消投注”了解更多详情。 谢谢-->
+                            <!--</marquee>-->
+                        </td>
+                    </tr>
+                    <!-- // text Maquse-->
+
+                    <!--    <tr>-->
+                    <!--         <div id="footer">-->
+                    <!--<p class="copyright">© Copyright 2010-2018 AA2888, All rights reserved</p>-->
+                    <!--  </div>-->
+                    <!--    </tr>-->
+
+                </tbody>
+            </table>
+            <!--  // Header Section -->
+            <!-- main menu -->
+            <div id="navigator">
+                <ul class="nav" id="nav">
+
+                    <li><a id="tabhome" href="/home/">ដំណឹង</a></li>
+                    <li><a id="tablotto" href="/lotto/">ឡូតូ</a></li>
+                    <li><a id="tabbalance" href="/sport/balance/">តុល្យភាព</a></li>
+                    <li><a id="tabstatement" href="/sport/statement/">របាយការណ៏</a></li>
+                    <li><a id="tabpassword" href="/sport/password/">លេខសម្ងាត់ </a></li>
+
+                </ul>
+            </div>
+            <!-- // main menu -->
+
+        </div>
+
+        <div class="main-content" id="main-content" style="position:relative;">
+
+
+
+
+            <div id="navigator" style="width:100%;min-width:1736px">
+                <ul class="sub">
+                    <li><a href="/lotto/">ឡូតូ</a></li>
+                    <li><a href="/lotto/win_result/">របាយការណ៏នៃការឈ្នះ</a></li>
+                    <li><a href="/lotto/win_result_v1/">របាយការណ៏នៃការឈ្នះ 1</a></li>
+                    <li><a href="/lotto/results/" class="hover">លទ្ឋផល</a></li>
+                    <!--<li><a href="/lotto/rules/">Rules</a></li>-->
+                </ul>
+
+            </div>
+
+            <div class="main_sport_content">
+
+                <table border="0" cellpadding="0" cellspacing="0" class="control_table" width="800">
+                    <tbody>
+                        <tr>
+                            <td>
+                                &nbsp;Date<span class="datepicker_wrap"><input id="txtDateFrom" type="text" size="10"/> </span>
+                                <input id="btnGetResult" type="button" class="button1" value="Get Result" />
+                                <input id="btnGetResultToday" type="button" class="button1" value="Today" />
+                                <input id="btnGetResultYesterday" type="button" class="button1" value="Yesterday" />
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="divLoading"><img src="/static-result/user_portal/assets/loadingAnimation.gif"></div>
+
+                <div id="divGameList">
+                    <table id="tblGameResult" style="min-width:1300px;" width="100%" border="1" align="center" cellpadding="0" cellspacing="1" class="main_table">
+                        <thead>
+                            <tr class="main_table_header">
+                                <th nowrap="">No</th>
+                                <th nowrap="">Date</th>
+                                <th nowrap="">Title</th>
+                                <th nowrap="">Result</th>
+                                <th nowrap="">&nbsp;Detail&nbsp;</th>
+                                <th nowrap="">Bonus</th>
+                                <th nowrap="">&nbsp;Under/Over&nbsp;</th>
+                                <th nowrap="">Range</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody-result">
+
+                        </tbody>
+                    </table>
+                    <table id="tblFooter" border="0" cellpadding="0" cellspacing="1" class="main_table">
+                        <tbody>
+                            <tr class="main_table_even">
+                                <td align="center">0&nbsp;Record(s)&nbsp;&nbsp;&nbsp;0/0&nbsp;Page(s)&nbsp;&nbsp;&nbsp;
+                                    <a id="lnkFooterFirst" href="javascript:void(0)" class="link1">First</a>&nbsp;&nbsp;
+                                    <a id="lnkFooterPrev" href="javascript:void(0)" class="link1">Prev</a>&nbsp;&nbsp;
+                                    <a id="lnkFooterNext" href="javascript:void(0)" class="link1">Next</a>&nbsp;&nbsp;
+                                    <a id="lnkFooterLast" href="javascript:void(0)" class="link1">Last</a>&nbsp;&nbsp;
+                                    <input id="txtJump" size="2" maxlength="3" class="input2">&nbsp;
+                                    <a id="lnkFooterJump" href="javascript:void(0)" class="link1">Jump</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+
+
+            <div id="divLoadingCircle" class="loading" style="display:none">Loading&#8230;</div>
+
+            <div id="divLoading" style="display: none;"><img src="/static-result/user_portal/assets/loadingAnimation.gif"></div>
+
+            <div id="footer" style="z-index:5">
+                <p class="copyright">© Copyright 2020 KONGCHANSILA, All rights reserved</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src='/static-result/user_portal/js/moment.js'></script>
+    <script src='/static-result/user_portal/js/default.js'></script>
+    <script src='/static-result/user_portal/js/jquery.noty.packaged.min.js'></script>
+
+    <script src="/static-result/user_portal/js/js.cookie.js" type="text/javascript"></script>
+    <script src='/static-result/user_portal/js/language.js?ver=5'></script>
+
+
+
+    <script>
+        var lang = "en";
+        api = "https://api-keno.sbc369.asia/api/";
+
+        $('#navigator .nav').removeClass('hover');
+        $('#tablotto').addClass("hover");
+    </script>
+
+    <script src="/static-result/user_portal/js/jquery.calendar.3.4.js" type="text/javascript"></script>
+    <script src="/static-result/lotto/js/results.js?ver=2222edddadfas" type="text/javascript"></script>
+
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,395 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <input type="hidden" name="csrfmiddlewaretoken" value="NaNzmIsC3siHouaJ4yPDg0iYwtfaYP1jsHTWYzwzsQTI2KS4QrbGM7YvcZRLvy95">
+
+    <link rel="shortcut icon" type="image/png" href="/static-statement/user_portal/assets/ico.png">
+    <title>LOTTO8888</title>
+    <link rel="icon" type="image/x-icon" href="/images/lotto8888.icon">
+
+    <link rel="stylesheet" href='/static-statement/user_portal/css/style.css' type="text/css" />
+    <link rel='stylesheet' href='/static-statement/user_portal/css/calendar.css'>
+    <link rel='stylesheet' href='/static-statement/user_portal/css/animate.min.css'>
+    <link rel='stylesheet' href='/static-statement/user_portal/css/loading.css'>
+    <link rel='stylesheet' href='/static-statement/user_portal/css/clean-blue.css'>
+    <link rel='stylesheet' href='/static-statement/user_portal/css/jquery-impromptu.min.css'>
+    <link rel='stylesheet' href='/static-statement/user_portal/css/impromptu.css'>
+
+    <script src='/static-statement/user_portal/js/jquery-1.10.2.js'></script>
+    <script src='/static-statement/user_portal/js/jquery.min.js'></script>
+    <script src='/static-statement/user_portal/js/jquery-cookie.js'></script>
+    <script src='/static-statement/user_portal/js/jquery-impromptu.min.js'></script>
+    <script src='/static-statement/user_portal/js/utils.js?ver=123'></script>
+    <script src='/static-statement/user_portal/js/printThis.js'></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-firestore.js"></script>
+
+
+    <script>
+        api = "https://api-keno.sbc369.asia/api/";
+        env = "PROD";
+
+        var firebaseConfig;
+
+        if (env == 'DEV')
+
+            firebaseConfig = {
+                apiKey: "AIzaSyAYD5mJTSsggpFqTcr8tFOmaGrHYCWKG-Y",
+                authDomain: "cocks-dev.firebaseapp.com",
+                databaseURL: "https://cocks-dev.firebaseio.com",
+                projectId: "cocks-dev",
+                storageBucket: "cocks-dev.appspot.com",
+                messagingSenderId: "1006353546625",
+                appId: "1:1006353546625:web:9da95dc67c2311e833bc80"
+            };
+        else {
+            firebaseConfig = {
+                apiKey: "AIzaSyDzltYo6-B7wZywYese5MWKgPvaK2sD6lY",
+                authDomain: "cocks-43140.firebaseapp.com",
+                databaseURL: "https://cocks-43140.firebaseio.com",
+                projectId: "cocks-43140",
+                storageBucket: "cocks-43140.appspot.com",
+                messagingSenderId: "107519811824",
+                appId: "1:107519811824:web:2ee1b87a146b17a0"
+            };
+        }
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        db = firebase.firestore();
+
+        db.collection('members').doc('{0}'.format($.cookie("username").toUpperCase()))
+
+            .onSnapshot(function(doc) {
+
+                $("#balance").text(financial(doc.get('balance')) + " (KHR)");
+
+            });
+    </script>
+
+
+
+
+</head>
+
+<body style="position:fixed;">
+
+    <div id="betLoading" class="loading" style="display:none">Loading&#8230;</div>
+
+    <div>
+
+        <div id="main">
+
+            <div style="display:none;">
+                <div class="invoice"></div>
+            </div>
+
+            <!-- Header Section -->
+            <table border="0" cellpadding="0" cellspacing="0" id="header" style="width:100%;min-width:1736px;">
+                <tbody>
+                    <tr>
+                        <td class="logo" rowspan="2" style="padding-top:0px;">
+                            <div><img src="/images/logo.png" class="login_icons" /></div>
+                        </td>
+                        <td height="50">
+                            <div class="user_wel">
+                                Welcome,<span id="spanLoginID"></span><span id="balance" style="padding-left:5px;color:#1F87CC;font-weight: bold;"></span>
+                            </div>
+                            <ul class="lang">
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('en')">English</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('kh')">ខ្មែរ</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('th')">ไทย</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('vn')">Tiếng Việt</a></li>
+
+                            </ul>
+                        </td>
+                        <td class="logout" rowspan="2" id="tdLiveChat">
+                            <a href="/" class="btn_logout" style="color: #fff; padding: 20px; cursor: pointer;">Logout</a>
+                        </td>
+                    </tr>
+                    <!-- Text Maquess -->
+                    <tr>
+                        <td class="marquee" id="mar_news">
+                            <marquee direction="left" id="spShowNews" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+                                Dear Valued Partner: Kindly to be informed that your member has been involved in an abnormal betting. Hence, the affected ticket will be canceled. Thank you! Match : FC Samtredia (N) -vs- FC Aragvi Dusheti Member ID : A8EEACAA029 SSLLSSCC622 Ticket :
+                                4 Tickets Kindly refer to agent site &#x27;&#x27;Cancelled Bets&#x27;&#x27; for more details. Thank you ដៃគូដ៏មានតម្លៃ៖ សូមជម្រាបជូនថា សមាជិករបស់អ្នកបានចូលរួមនៅក្នុងការភ្នាល់មិនប្រក្រតី។ ដូច្នេះសំបុត្រដែលរងផលប៉ះពាល់នឹងត្រូវលុបចោល។
+                                សូមអរគុណ! ការប្រកួត : FC Samtredia (N) -vs- FC Aragvi Dusheti លេខសម្គាល់សមាជិក : A8EEACAA029 SSLLSSCC622 សំបុត្រ : 4 សំបុត្រ សូមចូលទៅកាន់គេហទំព័រភ្នាក់ងារ &#x27;&#x27;ការភ្នាល់ដែលបានលុបចោល&#x27;&#x27; សម្រាប់ព័ត៌មានលម្អិតបន្ថែម។
+                                សូមអរគុណ 尊敬的合作伙伴： 谨此告知您的会员涉及异常投注。 因此，受影响的机票将被取消。 谢谢你！ 比赛：FC Samtredia (N) -vs- FC Aragvi Dusheti 会员 ID：A8EEACAA029 SSLLSSCC622 门票：4 张门票 请参阅代理网站“取消投注”了解更多详情。 谢谢
+                            </marquee>
+                        </td>
+                    </tr>
+                    <!-- // text Maquse-->
+
+                </tbody>
+            </table>
+
+            <!--  // Header Section -->
+            <!-- main menu -->
+            <div id="navigator">
+                <ul class="nav" id="nav">
+
+                    <li><a id="tabhome" href="/home/">ដំណឹង</a></li>
+                    <li> <a id="tablotto" href="/lotto/">ឡូតូ</a></li>
+                    <li><a id="tabbalance" href="/sport/balance/">តុល្យភាព</a></li>
+                    <li><a id="tabstatement" href="/sport/statement/">របាយការណ៏</a></li>
+                    <li><a id="tabpassword" href="/sport/password/">លេខសម្ងាត់ </a></li>
+
+
+                </ul>
+            </div>
+            <!-- // main menu -->
+
+        </div>
+
+        <div class="main-content" id="main-content">
+
+
+            <div class="main_sport_content">
+
+                <div id="divReport">
+                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="1" class="main_table">
+                        <thead>
+                            <tr class="main_table_header">
+                                <th style="width:60px;">No</th>
+                                <th style="width:100px;">Date</th>
+                                <th style="width:200px;">Remark</th>
+                                <th style="width:100px;">Turnover</th>
+                                <th style="width:100px;">Valid Bet</th>
+                                <th style="width:100px;">Net W/L</th>
+                                <th style="width:100px;">Comm</th>
+                                <th style="width:100px;">Deposit</th>
+                                <th style="width:100px;">Withdraw</th>
+                                <th style="width:100px;">Balance</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody id="tbetlist">
+
+
+                        </tbody>
+
+                    </table>
+
+                    <div id="divLoading"><img src="/static-statement/user_portal/assets/loadingAnimation.gif"></div>
+
+                </div>
+
+                <div class="main_content_betlist" style="margin-top:0px;">
+
+                    <div id="divReportDetail" class="content-betlist footer_margin" style="display:none;position:fixed;height:100%;overflow-y:scroll;">
+
+                        <div>
+                            <!--content center-->
+
+                            <div id="divLoadingReportDetail"><img src="/static-statement/user_portal/assets/loadingAnimation.gif"></div>
+
+                            <span><input id="btnReturn" type="button" class="button1" value="Return"/></span>
+
+                            <div style="display:block;height:10px;"></div>
+
+                            <div id="tbl-winlose_by_game">
+
+                                <table border="0" align="center" cellpadding="0" cellspacing="1" class="main_table_sport_betlist" style="margin-bottom:150px;">
+
+                                    <thead>
+                                        <tr class="main_table_sport_header">
+                                            <th class="main_table_sport_header2" style="width:150px">Game Type</th>
+                                            <th class="main_table_sport_header2" width="100px">Turnover</th>
+                                            <th width="100px">Valid Bet</th>
+                                            <th width="100px">Win Lose</th>
+                                            <th width="100px">Commission</th>
+                                            <th width="100px">Net Winlose</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody id="tbl-winlose_by_game_body">
+
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                            <input type="hidden" id="txtGameid" />
+                            <input type="hidden" id="txtDate" />
+
+                            <div id="tbl-winlose_detail_by_game">
+
+                            </div>
+
+                        </div>
+
+                        <!--for sport-->
+                        <div id="betdetail" class="bet_detail_pop" style="display:none;position:absolute;">
+
+                            <div id="betdetalheader" class="betdetailheader">
+                                <span id="parlay_title">Mix Palay</span>
+                                <div style="text-align:right;float:right;line-height:20px;">
+                                    <a href="javascript:void(0)" style="color:#fff;font-weight:normal;" onclick="close_betdetail()">Close</a>
+                                </div>
+                            </div>
+
+                            <table border="0" align="center" cellpadding="0" cellspacing="1">
+                                <thead>
+
+                                    <tr class="main_table_sport_header">
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:25px">No</th>
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:220px">Selection</th>
+                                        <th style="width:32px;font-size:13px;">Odd</th>
+                                        <th style="width:40px;font-size:13px;">Total<br>Odd</th>
+                                        <th style="width:40px;font-size:13px;">Stake</th>
+                                        <th style="width:40px;font-size:13px;">Win<br>Lose</th>
+                                        <th style="width:40px;font-size:13px;">Status</th>
+                                    </tr>
+
+                                </thead>
+
+
+                            </table>
+
+                            <div id="divLoadingDetail"><img src="/static-statement/user_portal/assets/loadingAnimation.gif"></div>
+
+                            <div id="tdetail">
+
+
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!--for keno jackpot-->
+                        <div id="betdetail_jackpot" class="bet_detail_pop" style="display:none;position:absolute;width:300px;height:407px;min-height:407px!important;">
+
+                            <div id="betdetalheader" class="betdetailheader">
+                                <span id="parlay_title">Jackpot</span>
+                                <div style="text-align:right;float:right;line-height:20px;">
+                                    <a href="javascript:void(0)" style="color:#fff;font-weight:normal;" onclick="close_betdetail_jackpot()">Close</a>
+                                </div>
+                            </div>
+
+                            <table border="1" align="center" cellpadding="0" cellspacing="0" class="main_table">
+                                <thead>
+
+                                    <tr class="main_table_sport_header">
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:80px">Hits</th>
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:200px">Num</th>
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:50px">Odd</th>
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:50px">Status</th>
+                                    </tr>
+
+                                </thead>
+
+
+                            </table>
+
+                            <div id="divLoadingDetail_jackpot"><img src="/static-statement/user_portal/assets/loadingAnimation.gif"></div>
+
+                            <div id="tdetail_jackpot">
+
+                            </div>
+
+                        </div>
+
+                        <!--end of keno jackpot-->
+
+                        <!--for joker-->
+                        <div id="betdetail_joker" class="bet_detail_pop" style="display:none;position:absolute;width:400px;height:300px;min-height:300px!important;">
+
+                            <div id="betdetalheader" class="betdetailheader">
+                                <span id="parlay_title">Joker</span>
+                                <div style="text-align:right;float:right;line-height:20px;">
+                                    <a href="javascript:void(0)" style="color:#fff;font-weight:normal;" onclick="close_betdetail_joker()">Close</a>
+                                </div>
+                            </div>
+
+                            <table border="1" align="center" cellpadding="0" cellspacing="0" class="main_table" style="margin-bottom:2px;">
+                                <thead>
+
+                                    <tr class="main_table_sport_header">
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:30px">No</th>
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:200px">Bet Id</th>
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:70px">Bet Amount</th>
+                                        <th class="main_table_sport_header2" style="font-size:13px;width:60px">Status</th>
+                                    </tr>
+
+                                </thead>
+
+
+                            </table>
+
+                            <div id="divLoadingDetail_joker"><img src="/static-statement/user_portal/assets/loadingAnimation.gif"></div>
+
+                            <div id="tdetail_joker">
+
+                            </div>
+
+                        </div>
+
+                        <!--end of joker-->
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+            <div id="divLoadingCircle" class="loading" style="display:none">Loading&#8230;</div>
+
+            <div id="divLoading" style="display: none;"><img src="/static-statement/user_portal/assets/loadingAnimation.gif"></div>
+
+            <div id="footer" style="z-index:5">
+                
+                <p class="copyright">© Copyright 2020 Lotto8888, All rights reserved </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src='/static-statement/user_portal/js/moment.js'></script>
+    <script src='/static-statement/user_portal/js/default.js'></script>
+    <script src='/static-statement/user_portal/js/jquery.noty.packaged.min.js'></script>
+
+    <script src="/static-statement/user_portal/js/js.cookie.js" type="text/javascript"></script>
+    <script src='/static-statement/user_portal/js/language.js?ver=5'></script>
+
+
+
+    <script>
+        api = "https://api-keno.sbc369.asia/api/";
+
+        $('#navigator .nav').removeClass('hover');
+        $('#tabstatement').addClass("hover");
+    </script>
+    <script src="/static-statement/user_portal/js/statement.js?ver=132" type="text/javascript"></script>
+    <script src="/static-statement/user_portal/collape/jquery.collapsable.js"></script>
+
+    <script src="/getUsername.js"></script>
+
+
+</body>
+
+
+</html>

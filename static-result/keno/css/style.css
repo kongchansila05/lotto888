@@ -1,0 +1,1781 @@
+* {
+    box-sizing: border-box;
+}
+
+table {
+    border-collapse: collapse
+}
+
+#progress-time {
+    margin: 5px 3px 5px 5px;
+    float: none;
+}
+
+.keno-bet-modal .content-modal label {
+    display: block;
+    font-size: 13px;
+    float: right;
+    padding: 0 10px;
+    width: 100%;
+    text-align: center;
+    font-family: Kh-Battambang, 'Open Sans', sans-serif;
+    height: 195px;
+}
+
+.td_head .ul_head li .cal_date {
+    width: 170px;
+    height: 25px;
+    font-size: 14px;
+    padding-left: 20px;
+}
+
+/*body .tb_main_content th, body .tb_main_content td {font-family: 'Open Sans', sans-serif;}*/
+
+/*end keno old style*/
+
+.wrapper-new-keno {
+    display: block;
+    width: 968px;
+    overflow: hidden;
+    /*height: 100%;*/
+    margin-top: 5px;
+    padding-top: 5px;
+    font-family: Arial, sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+}
+
+.new-keno-menu ul {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    background: #8000FF;
+    text-align: left
+}
+
+.new-keno-menu ul li {
+    display: inline-block;
+    list-style-type: none;
+    position: relative;
+    z-index: 10;
+}
+
+.new-keno-menu ul li a {
+    display: block;
+    padding: 0 10px;
+    font-size: 15px;
+    text-decoration: none;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.new-keno-menu ul li.active a {
+    background: #5D396D;
+}
+
+.new-keno-left {
+    width: 200px;
+    display: block;
+    float: left;
+    background: #fff;
+    min-height: 620px;
+    height: 100%;
+    overflow: hidden
+}
+
+.new-keno-left h3 {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 32px;
+    margin: 0;
+    line-height: 32px;
+    color: rgb(39, 68, 140);
+    background: rgb(211, 228, 246);
+    font-family: inherit;
+    padding-left: 15px;
+}
+
+.keno-refresh {
+    display: block;
+    width: 32px;
+    height: 32px;
+    float: right;
+    margin-right: 5px;
+    background: url(/static/keno/images/games/refresh.png) center no-repeat;
+    cursor: pointer
+}
+
+.keno-refresh:hover {
+    -ms-transform: rotate(-25deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-25deg);
+    /* Safari 3-8 */
+    transform: rotate(-25deg);
+}
+
+.new-keno-left .group-betcredit {
+    display: block;
+    overflow: hidden;
+    padding: 2px 15px;
+}
+
+.new-keno-left .group-betcredit .betcredit-label {
+    font-size: 14px;
+    color: rgb(39, 68, 140);
+    font-weight: bold;
+    float: left;
+}
+
+.new-keno-left .group-betcredit .total-amount {
+    font-size: 14px;
+    color: rgb(39, 68, 140);
+    font-family: inherit;
+    font-weight: bold;
+    float: right;
+    margin: 0
+}
+
+.result-list-now {
+    padding: 0;
+    height: 118px;
+    margin: 0;
+}
+
+.result-list-now li {
+    list-style-type: none;
+    display: block;
+    overflow: hidden;
+    padding: 0;
+    font-weight: 600;
+    padding: 0 15px 0 15px;
+}
+
+.result-list-now li:nth-child(even) {
+    background-color: #f2f6f9;
+}
+
+.result-list-now li .result-now,
+.result-list-now li .result-total {
+    display: block;
+    margin: 0;
+    font-size: 12px;
+    font-family: inherit;
+}
+
+.result-list-now li .result-now {
+    float: left;
+}
+
+.result-list-now li .result-total {
+    float: right;
+}
+
+.result-list-now li:after {
+    content: '';
+    clear: both;
+}
+
+p.result-now,
+p.result-total {
+    height: 24px !important;
+    line-height: 24px !important;
+}
+
+.bet-list-now {
+    padding: 0;
+    margin: 0;
+    height: 310px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: block;
+    width: 100%;
+}
+
+.bet-list-now li {
+    display: block;
+    list-style-type: none;
+    padding: 2px;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+.bet-list-now .list-period {
+    background: #d0ddf4;
+    color: #536eae;
+    font-weight: bold !important;
+    font-size: 14px;
+    padding: 12px 0
+}
+
+.bet-list-now li p,
+.bet-list-now li a {
+    font-size: 12px;
+    font-family: inherit;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.bet-list-now li p {
+    float: left;
+}
+
+.bet-list-now li .type-game {
+    width: 35%;
+    text-align: left;
+    padding-left: 8px;
+}
+
+.bet-list-now li .round {
+    background-color: #8DACE5;
+    color: rgb(39, 68, 140);
+    height: 22px;
+    padding-left: 12px;
+    width: 235px;
+    text-align: left;
+    padding-top: 1px;
+    margin-left: -2px;
+}
+
+.bet-list-now li .bet-item {
+    width: 30%;
+    text-align: left;
+}
+
+.bet-list-now li .bet-winlose {
+    width: 20%;
+    text-align: left;
+}
+
+.bet-list-now li .return-amount {
+    width: 30%;
+}
+
+.bet-list-now li .win-loss {
+    width: 30%;
+}
+
+.bet-list-now li a {
+    float: right;
+    width: 15%;
+    text-align: right;
+    text-decoration: underline;
+    color: #1c0df1
+}
+
+.new-keno-right {
+    width: 767px;
+    display: block;
+    float: left;
+    height: auto;
+    padding: 0px 0 0 9px;
+    background: #fff;
+}
+
+.keno-play-main {
+    width: 100%;
+    border: 2px solid #333333;
+    border-bottom-width: 1px;
+    overflow: hidden;
+    background: #333333;
+}
+
+.keno-play-main:after {
+    content: '';
+    clear: both;
+}
+
+.keno-play-main .keno-dispaly-result {
+    width: 263px;
+    float: left;
+    /*margin-left: -3px;*/
+}
+
+.keno-dispaly-result .keno-logo,
+.keno-dispaly-result .keno-total {
+    width: 50%;
+    float: left;
+    height: auto;
+}
+
+.keno-dispaly-result .keno-logo {
+    /*border: 3px solid #77581a;*/
+    background: url(/static/keno/images/games/keno.png), url(/static/keno/images/games/keno-bc.png);
+    background-position: left, center;
+    background-size: 65% 65%, 100% 100%;
+    background-repeat: no-repeat;
+    height: 56px;
+}
+
+.keno-dispaly-result .keno-logo img {
+    width: 100%;
+    display: block;
+    height: auto;
+}
+
+.keno-dispaly-result .keno-total {
+    background: url(/static/keno/images/games/keno-bc-gray.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: yellow;
+    height: 56px;
+}
+
+.keno-row {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    padding: 5px 10px 0
+}
+
+.keno-dispaly-result .keno-total .period-result {
+    font-size: 15px;
+    font-weight: 700;
+    color: inherit;
+    font-family: inherit;
+    text-align: center;
+    display: block;
+    margin: 0;
+    line-height: 1.5
+}
+
+.keno-dispaly-result .keno-total .label-title {
+    font-size: 16px;
+    font-weight: bold;
+    font-family: inherit;
+    color: inherit;
+    float: left;
+    line-height: 1.7;
+    font-family: Kh-Battambang, 'Open Sans', sans-serif;
+}
+
+.keno-dispaly-result .keno-total .total-result {
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: bold;
+    color: inherit;
+    float: right;
+    margin: 0;
+    line-height: 1.7;
+}
+
+.keno-content-result {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    margin-left: -1px;
+}
+
+.keno-content-result table td {
+    border: 1.5px solid #333;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 15px;
+    background: #d7d9ed;
+    overflow: hidden;
+    margin-left: -1px;
+}
+
+.keno-content-result table td span {
+    padding: 0;
+    margin: 0;
+    display: block;
+    line-height: 25px;
+    color: rgba(58, 58, 58, 0.9);
+    font-size: 14px;
+    /*text-shadow: 0px 0px, 0px 0px, 1px 0px;*/
+    font-weight: 600;
+}
+
+.keno-content-result table td.active span {
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 147, 189, 1);
+    background: -moz-linear-gradient(top, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(10, 147, 189, 1)), color-stop(100%, rgba(0, 39, 65, 1)));
+    background: -webkit-linear-gradient(top, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    background: -o-linear-gradient(top, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    background: linear-gradient(to bottom, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a93bd', endColorstr='#002741', GradientType=0);
+    color: white;
+    border: 1px solid #fff;
+    -webkit-animation-name: nblink;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: nblink;
+    animation-duration: 2s;
+}
+
+.keno-content-result-jackpot table td.active {
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 147, 189, 1);
+    background: -moz-linear-gradient(top, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(10, 147, 189, 1)), color-stop(100%, rgba(0, 39, 65, 1)));
+    background: -webkit-linear-gradient(top, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    background: -o-linear-gradient(top, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    background: linear-gradient(to bottom, rgba(10, 147, 189, 1) 0%, rgba(0, 39, 65, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a93bd', endColorstr='#002741', GradientType=0);
+    color: white;
+    border: 1px solid #fff;
+    -webkit-animation-name: nblink;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: nblink;
+    animation-duration: 2s;
+    text-align: center;
+}
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes nblink {
+    0% {
+        opacity: 0.3;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0.9
+    }
+}
+
+/* Standard syntax */
+
+@keyframes nblink {
+    0% {
+        opacity: 0.3;
+    }
+    25% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0.9
+    }
+}
+
+.keno-play-main .keno-frequence {
+    width: 179px;
+    float: left;
+    overflow: hidden;
+    display: block;
+}
+
+.keno-play-main .keno-frequence table {
+    width: 233px;
+}
+
+.keno-play-main .keno-frequence h3 {
+    background: url(/static/keno/images/games/keno-bc-yello.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    height: 28px;
+    margin-top: 0.1px;
+    font-weight: bold;
+    font-family: inherit;
+    font-size: 17px;
+    text-align: center;
+    display: block;
+    padding-top: 4px;
+}
+
+.keno-play-main .keno-frequence .type-play {
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: url(/static/keno/images/games/keno-bc-light-gray.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding-top: 3px;
+    height: 29px;
+    font-weight: bold;
+}
+
+.keno-play-main .keno-frequence .type-play li {
+    float: left;
+    width: 25%;
+    text-align: center;
+    list-style-type: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 22px
+}
+
+.keno-frequence table td {
+    width: 25%;
+    text-align: center;
+    border: 1.5px solid #333333
+}
+
+.keno-frequence table td a {
+    text-decoration: none;
+    background: #F0EECD;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    display: block;
+    height: 27px;
+    line-height: 27px;
+    width: 44px;
+}
+
+.keno-frequence table td a:hover {
+    background: linear-gradient(#D0270A, #88270A);
+    color: #fff;
+    outline: 1px solid #fff;
+    outline-offset: -1px;
+}
+
+.keno-frequence table td a:hover span,
+.keno-frequence table td.active span {
+    color: #fff
+}
+
+.keno-frequence table td.active a {
+    background: linear-gradient(#D0270A, #88270A);
+    outline: 1px solid #fff;
+    outline-offset: -1px;
+    color: #fff;
+    -webkit-animation-name: fblink;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: fblink;
+    animation-duration: 4s;
+    opacity: 0.4;
+}
+
+.keno-frequence .keno-bet span {
+    color: #3a3a3a;
+    letter-spacing: -1px
+}
+
+.keno-frequence .keno-bet a.active {
+    background: #ECB629;
+    outline: 2px solid transparent;
+    border: none;
+    -webkit-animation-name: kblink;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: kblink;
+    animation-duration: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes fblink {
+    0% {
+        opacity: 0.4;
+        color: #fff;
+    }
+    25% {
+        opacity: 0.8;
+        color: #fff;
+    }
+    50% {
+        opacity: 1;
+        color: #fff;
+    }
+    75% {
+        opacity: 0.8;
+        color: #fff;
+    }
+    100% {
+        opacity: 0.4;
+        color: #fff;
+    }
+}
+
+/* Standard syntax */
+
+@keyframes fblink {
+    0% {
+        opacity: 0.4;
+        color: #fff;
+    }
+    25% {
+        opacity: 0.8;
+        color: #fff;
+    }
+    50% {
+        opacity: 1;
+        color: #fff;
+    }
+    75% {
+        opacity: 0.8;
+        color: #fff;
+    }
+    100% {
+        opacity: 0.4;
+        color: #fff;
+    }
+}
+
+.keno-play-main .keno-play-right {
+    width: 312px;
+    float: left
+}
+
+.keno-play-main .keno-play-right::after {
+    content: '';
+    clear: both
+}
+
+.keno-play-right .random-play {
+    width: 62px;
+    display: block;
+    float: left
+}
+
+.keno-play-right .random-play .loading-gif {
+    background: url(/static/keno/images/games/spinner1.gif);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    display: block;
+    width: 62px;
+    z-index: 10;
+    height: 63px;
+    margin-top: -3px;
+}
+
+.loading-gif .timer-loading {
+    margin: 0;
+    display: block;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: inherit;
+    line-height: 30px
+}
+
+.blgo-random-number {
+    position: relative;
+    height: 139px;
+    display: block;
+    background-image: url(/static/keno/images/games/keno-bc-logo.png), linear-gradient(200deg, #fff 10%, #636363);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+    margin-top: -3px;
+    margin-left: 2px;
+}
+
+#number_of_result {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fff;
+    padding: 3px;
+    border: 1px solid #b10505;
+    margin: 0;
+    background: rgba(169, 3, 41, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(169, 3, 41, 1)), color-stop(44%, rgba(143, 2, 34, 1)), color-stop(100%, rgba(109, 0, 25, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=1);
+}
+
+.total_random_result {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 48px;
+    display: none;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 48px;
+    font-family: inherit;
+    color: #fff;
+    padding: 3px;
+    margin: 0;
+    background: rgba(169, 3, 41, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(169, 3, 41, 1)), color-stop(44%, rgba(143, 2, 34, 1)), color-stop(100%, rgba(109, 0, 25, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(169, 3, 41, 1) 0%, rgba(143, 2, 34, 1) 44%, rgba(109, 0, 25, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019', GradientType=1);
+}
+
+.random_number {
+    font-size: 16px;
+    margin: 0;
+    line-height: 105px;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-family: inherit;
+}
+
+.keno-play-right .blog-play {
+    width: calc(100% - 62px);
+    height: 100px;
+    float: left;
+}
+
+.bet-period-timer {
+    width: 249px;
+    display: block;
+    height: 28px;
+    margin-left: 2px;
+    background-image: url(/static/keno/images/games/keno-bc-yello1.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.bet-period-timer #period-before {
+    float: left;
+    font-size: 14px;
+    color: #ff0;
+    line-height: 24px;
+    font-family: inherit;
+    font-weight: bold;
+    margin: 0;
+    padding-left: 10px
+}
+
+.group-play-box {
+    width: 123px;
+    display: block;
+    float: left;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.group-play-box-odd-even {
+    width: 124px;
+    display: block;
+    float: left;
+    background-image: url(/static/keno/images/games/keno-bc-yellow-ov.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.over-under-odd-even {
+    width: 100%;
+    display: block;
+    overflow: hidden;
+}
+
+.parlay-over-under-odd-even {
+    display: block;
+    font-family: Kh-Battambang, 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    height: 28px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    background-image: url(/static/keno/images/games/keno-bc-yellow-parlay.png) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 248px 28px !important;
+}
+
+.range-over-under-odd-even {
+    background-image: url(/static/keno/images/games/keno-bc-yellow-parlay.png) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 311px 28px !important;
+}
+
+.over-under-odd-even label {
+    display: block;
+    font-family: Kh-Battambang, 'Open Sans', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    height: 28px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    background-image: url(/static/keno/images/games/keno-bc-yellow-ov.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 123px 28px;
+}
+
+.over-under-odd-even .box-bet {
+    width: 61.5;
+    float: left;
+    display: block;
+    height: 56px;
+    border: 1px solid #333;
+    background-image: linear-gradient(#e6f0f1, #e6f0f1);
+    background-color: #fff;
+    background-position: center center;
+    background-size: 62px 54px;
+    background-repeat: no-repeat;
+}
+
+.over-under-odd-even .box-bet .type {
+    margin-bottom: 3px;
+}
+
+.over-under-odd-even .box-bet a {
+    /*border:2px solid #fff;*/
+    overflow: hidden;
+    display: block;
+    color: #000;
+    text-decoration: none;
+    height: 100%;
+    position: relative
+}
+
+.over-under-odd-even .box-bet a .type {
+    color: #000;
+}
+
+.over-under-odd-even .box-bet a p {
+    line-height: 1.3;
+}
+
+.over-under-odd-even .box-bet a:hover {
+    background: #ECB629;
+    /*background: #c4802d;*/
+    /*background-image:linear-gradient(#c4802d, #72460B);*/
+    outline: 2px solid transparent;
+    border: none;
+}
+
+.over-under-odd-even .box-bet a:hover p {
+    color: #fff;
+}
+
+.over-under-odd-even .box-bet a.active {
+    background: #ECB629;
+    outline: 2px solid transparent;
+    border: none;
+    -webkit-animation-name: kblink;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: kblink;
+    animation-duration: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+
+@-webkit-keyframes kblink {
+    0% {
+        background-color: #b08002;
+        opacity: 0.6
+    }
+    25% {
+        background-color: #ECB629;
+        opacity: 0.8
+    }
+    50% {
+        background-color: #9d7202;
+        opacity: 1
+    }
+    75% {
+        background-color: #ECB629;
+        opacity: 0.8
+    }
+    100% {
+        background-color: #b08002;
+        opacity: 0.6
+    }
+}
+
+/* Standard syntax */
+
+@keyframes kblink {
+    0% {
+        background-color: #b08002;
+        opacity: 0.6
+    }
+    25% {
+        background-color: #ECB629;
+        opacity: 0.8
+    }
+    50% {
+        background-color: #9d7202;
+        opacity: 1
+    }
+    75% {
+        background-color: #ECB629;
+        opacity: 0.8
+    }
+    100% {
+        background-color: #b08002;
+        opacity: 0.6
+    }
+}
+
+.over-under-odd-even .box-bet a.active p {
+    color: #fff;
+}
+
+/*.over-under-odd-even .box-bet-left{border-right: 1px solid #333;}*/
+
+/*.over-under-odd-even .box-bet-right{border-left: 1px solid #333;}*/
+
+.over-under-odd-even .box-bet p {
+    margin: 0;
+    font-size: 12px;
+    text-align: center;
+}
+
+.over-under-odd-even .box-bet .odds {
+    color: #fd9e0f;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 0px;
+    line-height: inherit;
+}
+
+.range {
+    color: #B25C8E;
+}
+
+.over-under-odd-even .odd-even .odds {
+    margin-top: 20px;
+}
+
+.parlay .group-play-box .odds {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+}
+
+.parlay .group-play-box,
+.range-type .group-play-box {
+    width: 100%;
+}
+
+.parlay .box-bet {
+    width: 25%
+}
+
+.range-type .box-bet {
+    width: 20%;
+    height: 57px;
+}
+
+.range-type .box-bet .odds {
+    margin-top: 0px;
+    font-size: 16px
+}
+
+.bet-period-timer #timer-display {
+    float: right;
+    font-size: 13px;
+    color: #ff0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 24px;
+    margin: 0;
+    padding-right: 10px
+}
+
+.keno-smallest-biggest {
+    display: block;
+    width: 100%;
+    clear: both;
+    overflow: hidden
+}
+
+.keno-smallest-biggest .smallest,
+.keno-smallest-biggest .biggest {
+    width: 50%;
+    float: left;
+}
+
+.keno-smallest-biggest h3 {
+    background: rgba(234, 235, 162, 1);
+    background: -moz-linear-gradient(top, rgba(234, 235, 162, 1) 0%, rgba(194, 194, 91, 1) 50%, rgba(234, 235, 162, 1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(234, 235, 162, 1)), color-stop(50%, rgba(194, 194, 91, 1)), color-stop(100%, rgba(234, 235, 162, 1)));
+    background: -webkit-linear-gradient(top, rgba(234, 235, 162, 1) 0%, rgba(194, 194, 91, 1) 50%, rgba(234, 235, 162, 1) 100%);
+    background: -o-linear-gradient(top, rgba(234, 235, 162, 1) 0%, rgba(194, 194, 91, 1) 50%, rgba(234, 235, 162, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(234, 235, 162, 1) 0%, rgba(194, 194, 91, 1) 50%, rgba(234, 235, 162, 1) 100%);
+    background: linear-gradient(to bottom, rgba(234, 235, 162, 1) 0%, rgba(194, 194, 91, 1) 50%, rgba(234, 235, 162, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeba2', endColorstr='#eaeba2', GradientType=0);
+    color: #333;
+    text-align: center;
+    height: 29px;
+    border: 3px solid #aaac68;
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 24px;
+    display: block;
+    cursor: pointer;
+}
+
+.keno-smallest-biggest ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: block;
+    border-top: 2px solid #333
+}
+
+.keno-smallest-biggest ul li {
+    list-style-type: none;
+    float: left;
+    width: 33.33%;
+    background: #d7d7d7;
+    height: 40px;
+    padding-right: 4px
+}
+
+.keno-smallest-biggest ul li:last-child {
+    padding-right: 2px;
+}
+
+.keno-smallest-biggest ul li a {
+    display: block;
+    background: linear-gradient(#e6f0f1, #e6f0f1);
+    border: 2px solid #fff;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    text-decoration: none;
+}
+
+.keno-smallest-biggest ul li a:hover {
+    background: #ECB629;
+    /*background: #c4802d;*/
+    /*background-image:*/
+    /*  linear-gradient(*/
+    /*    #c4802d, #72460B*/
+    /*);*/
+}
+
+.keno-smallest-biggest ul li a:hover p {
+    color: #fff;
+}
+
+.keno-smallest-biggest ul li a.active {
+    background: #ECB629;
+    -webkit-animation-name: kblink;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: kblink;
+    animation-duration: 2s;
+}
+
+.keno-smallest-biggest ul li a.active p {
+    color: #fff;
+}
+
+.keno-smallest-biggest ul li p {
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 17px;
+}
+
+.keno-smallest-biggest ul li p.range {
+    margin-top: 3px;
+}
+
+.keno-smallest-biggest ul li p.odds {
+    color: #fd9e0f;
+    font-weight: bold;
+    font-size: 16px
+}
+
+.history-result td {
+    height: 38px;
+    background: #AD9776;
+    border: 1px solid #837676;
+    vertical-align: middle;
+    box-shadow: -1px 0 #e4dbc5, 0 1px #e4dbc5, 1px 0 #e4dbc5, 0 -1px #e4dbc5;
+    -moz-box-shadow: 0 0 2px 1px #fff;
+    -webkit-box-shadow: 0 0 2px 1px #fff;
+    -ms-box-shadow: 0 0 2px 1px #fff;
+    -o-box-shadow: 0 0 2px 1px #fff;
+}
+
+.history-result td .h_over {
+    background: url(/static/keno/images/games/over.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_under {
+    background: url(/static/keno/images/games/under.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_odd {
+    background: url(/static/keno/images/games/odd.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 35px
+}
+
+.history-result td .h_even {
+    background: url(/static/keno/images/games/even.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_overodd {
+    background: url(/static/keno/images/games/over-odd.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_overeven {
+    background: url(/static/keno/images/games/over-even.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_underodd {
+    background: url(/static/keno/images/games/under-odd.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_undereven {
+    background: url(/static/keno/images/games/under-even.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_1st {
+    background: url(/static/keno/images/games/1st.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_2nd {
+    background: url(/static/keno/images/games/2nd.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_3rd {
+    background: url(/static/keno/images/games/3rd.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_4th {
+    background: url(/static/keno/images/games/4th.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_5th {
+    background: url(/static/keno/images/games/5th.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_small_1_2 {
+    background: url(/static/keno/images/games/small-1-2.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_small_3_5 {
+    background: url(/static/keno/images/games/small-3-5.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_small_6 {
+    background: url(/static/keno/images/games/small-6.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_big_79_80 {
+    background: url(/static/keno/images/games/big-79-80.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_big_76_78 {
+    background: url(/static/keno/images/games/big-76-78.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.history-result td .h_big_75 {
+    background: url(/static/keno/images/games/big-75.png) no-repeat center;
+    background-size: 34px;
+    display: block;
+    height: 34px
+}
+
+.msg-bet {
+    /*position:absolute;*/
+    /*top:0;left:0;*/
+    /*width:100%;margin:0;font-size:12px;text-align:center;*/
+    /*font-family:inherit;border:2px solid #403636;color:#ff0;height:22px;*/
+    /*line-height:21px;display:none;*/
+    /*background:linear-gradient(to bottom,rgba(91,93,102,1) 0%,rgba(32,37,57,1) 50%,rgba(91,93,102,1) 100%);*/
+    /*font-family:Kh-Battambang,'Open Sans',sans-serif*/
+    background-image: linear-gradient(#c6c6c6 8%, #676b7d 20%, #383e55, #262c46);
+    line-height: 25px;
+    background-color: #383e55;
+    box-shadow: 0 2px 2px grey;
+    font-size: 12px;
+    color: #fbff42;
+    width: 60px;
+}
+
+.disable-bet {
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+.keno-bet {
+    background: none;
+}
+
+.keno-bet-modal {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    font-family: 'Open Sans', sans-serif
+}
+
+.keno-bet-modal .wrap-content {
+    background: url(/static/keno/images/games/form-bg.png) no-repeat;
+    background-size: 100% 100%;
+    width: 230px;
+    height: 330px;
+    display: block;
+    position: relative;
+    margin-top: 414px;
+    /*top:50%;*/
+    left: 45%;
+    transform: translate(-50%, -50%)
+}
+
+.wrap-content .wrap-btn {
+    width: 230px;
+    /*padding: 10px 0 21px 3px;margin:0 auto;*/
+}
+
+.wraper-bet {
+    display: block;
+    text-align: center
+}
+
+.modal-close-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: -28px;
+    right: -24px;
+    z-index: 6;
+}
+
+.modal-close-btn img {
+    width: 56%;
+    height: auto;
+    margin-top: 33px;
+    margin-left: -12px
+}
+
+.header-modal {
+    width: 100%;
+    padding: 17px 15px 0 16px;
+}
+
+.header-modal p {
+    margin: 5px 0 0 5px;
+}
+
+.content-modal p {
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: 22px;
+    text-align: left;
+}
+
+.header-modal .box-nk {
+    background: #D1D376;
+    width: 190px;
+    margin-left: 4px;
+    margin-top: -5px;
+    height: 60px;
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.42857143;
+}
+
+.keno-bet-modal .content-modal {
+    display: block;
+    width: 230px;
+    margin: 0 auto;
+    padding: 7px 5px 5px 5px;
+}
+
+.keno-bet-modal .content-modal input {
+    background: url(/static/keno/images/games/input-keno.png);
+    background-size: 100% 100%;
+    height: 30px;
+    display: inline-block;
+    width: 128px;
+    text-indent: 5px;
+    border-radius: 3px;
+    outline: none;
+    color: #8b0000;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.keno-bet-modal .content-modal hr {
+    height: 2px;
+    color: #333;
+    background-color: #333;
+    border: none;
+    margin: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.btn-bet {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 46px;
+    font-weight: 700;
+    color: #010101;
+}
+
+.btn-bet.coin1 {
+    background-image: url(/static/keno/images/games/coin1.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.btn-bet.coin5 {
+    background-image: url(/static/keno/images/games/coin5.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.btn-bet.coin10 {
+    background-image: url(/static/keno/images/games/coin10.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.btn-bet.coin50 {
+    background-image: url(/static/keno/images/games/coin50.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.btn-bet.coin100 {
+    background-image: url(/static/keno/images/games/coin100.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.btn-bet.coin500 {
+    background-image: url(/static/keno/images/games/coin500.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.btn-bet.coin1000 {
+    background-image: url(/static/keno/images/games/coin1000.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+[class*="btn-modal-"] {
+    display: inline-block;
+    width: 57px;
+    height: 26px;
+    background: url(/static/keno/images/games/btn-keno.png);
+    background-size: 100% 100%;
+    line-height: 30px;
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #8b0000;
+    cursor: pointer;
+    font-weight: 500;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 0px;
+}
+
+.btn-modal-reset {
+    margin-right: 0;
+}
+
+.max-payout span {
+    color: maroon;
+}
+
+.wrap-btn {
+    text-align: center;
+    /*padding: 7px 0 15px 0;*/
+    border-radius: 0 0 5px 5px;
+}
+
+.keno-disble {
+    display: none !important;
+}
+
+.keno-bet-modal.md-show {
+    display: block;
+}
+
+.modal-balance {
+    position: fixed;
+    width: 360px;
+    height: 45px;
+    background: rgba(0, 0, 0, 0.5);
+    top: 50%;
+    left: 45%;
+    margin-left: -180px;
+    margin-top: -30px;
+    z-index: 999990;
+    display: none;
+}
+
+.modal-balance .con-modal {
+    width: 360px;
+    height: auto;
+    min-height: 45px;
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #8a785e;
+    border: 5px solid #b8b09e;
+    border-radius: 5px
+}
+
+.modal-balance .con-modal h2 {
+    color: #fff;
+    text-align: center;
+    line-height: 2;
+    margin: 0;
+    font-size: 14px;
+    padding: 5px;
+    font-weight: 400
+}
+
+.modal-printing {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 999990
+}
+
+.content-printing {
+    background: #fff;
+    width: 400px;
+    height: 315px;
+    display: block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.printing-close {
+    width: 30px;
+    height: 30px;
+    background: #555;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    text-align: center;
+    line-height: 27px;
+    display: block;
+    font-size: 14px;
+    position: absolute;
+    top: -15px;
+    right: -15px
+}
+
+.printing-close:hover {
+    color: #fff;
+}
+
+.tbl_printing td {
+    font-size: 14px;
+    color: #000;
+    padding: 5px 0;
+}
+
+.btn_print {
+    padding: 3px 10px;
+    border-radius: 3px;
+    display: block;
+    font-size: 14px;
+    color: #000;
+    background: #ccc;
+    margin: 0 auto;
+}
+
+@media print {
+    table th,
+    table td {
+        font-size: 14px;
+        color: #000;
+        font-weight: bold
+    }
+}
+
+.div-result {
+    display: block;
+    position: absolute;
+    width: 63px;
+    height: 139px;
+    /*background-color: red;*/
+    margin-top: -139px;
+    margin-left: 1px;
+}
+
+.div-result-ram {
+    position: absolute;
+    height: 90px;
+    vertical-align: middle;
+    padding-top: 28px;
+    padding-bottom: 7px;
+    box-sizing: border-box;
+    background-color: #ffe4bd;
+    width: 100%;
+    left: 0;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    padding-top: 35px;
+    background-image: -webkit-linear-gradient(#fbff41, #f5681e 97%, #f39321 10%);
+    background-image: -moz-linear-gradient(#fbff41, #f5681e 97%, #f39321 10%);
+    background-image: -o-linear-gradient(#fbff41, #f5681e 97%, #f39321 10%);
+    background-image: linear-gradient(#fbff41, #f5681e 97%, #f39321 10%);
+}
+
+.div-result-total {
+    font-size: 25px;
+    height: 139px;
+    line-height: 25px;
+    padding-top: 20px;
+    color: #fff;
+    background-color: #cb0018;
+    background-image: linear-gradient(#7e000f, #cb0018, #7e000f 98%, #f0001c 10%);
+    font-weight: 700;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.div-result-no {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 15px;
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+    box-sizing: border-box;
+    background-color: #9c0000;
+    color: #fff;
+    font-weight: 700;
+    line-height: 15px;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.dot {
+    padding-top: 13px;
+    height: 50px;
+    width: 50px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: -58px;
+    background-color: #cb0018;
+    background-image: linear-gradient(#7e000f, #cb0018, #7e000f 98%, #f0001c 10%);
+}
+
+#btnBet {
+    margin: 0px !important;
+}
+
+#navigator ul.sub {
+    height: 26px;
+    line-height: 26px;
+    margin: 0px;
+    width: 100%;
+    padding: 0px;
+    position: relative;
+    display: block;
+}
+
+.keno-jackpot {
+    width: 120px;
+    background-color: #F0EECD;
+    display: block;
+    height: 400px;
+    margin-left: 1002px;
+    position: absolute;
+    border: solid 2px grey;
+}
+
+.keno-jackpot-header {
+    background: url(/static/keno/images/games/keno-bc-light-gray.png);
+    display: block;
+    width: 100%;
+    height: 30px;
+    margin: 0px;
+    padding: 3px 3px 3px 10px;
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.keno-jackpot-result {
+    width: 30px;
+    display: block;
+    height: 586px;
+    margin-left: 970px;
+    position: absolute;
+    border: solid 2px grey;
+}
+
+.keno-content-result table td.bet span {
+    width: 100%;
+    height: 100%;
+    background: green;
+    /*background: -moz-linear-gradient(top, rgba(10,147,189,1) 0%, rgba(0,39,65,1) 100%);*/
+    /*background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(10,147,189,1)), color-stop(100%, rgba(0,39,65,1)));*/
+    /*background: -webkit-linear-gradient(top, rgba(10,147,189,1) 0%, rgba(0,39,65,1) 100%);*/
+    /*background: -o-linear-gradient(top, rgba(10,147,189,1) 0%, rgba(0,39,65,1) 100%);*/
+    /*background: -ms-linear-gradient(top, rgba(10,147,189,1) 0%, rgba(0,39,65,1) 100%);*/
+    /*background: linear-gradient(to bottom, rgba(10,147,189,1) 0%, rgba(0,39,65,1) 100%);*/
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0a93bd', endColorstr='#002741', GradientType=0 );*/
+    color: white;
+    border: 1px solid #fff;
+    -webkit-animation-name: nblink;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: nblink;
+    animation-duration: 2s;
+}
+
+.keno-dispaly-result .keno-logo-jackpot,
+.keno-dispaly-result .keno-total {
+    width: 50%;
+    float: left;
+    height: auto;
+}
+
+.keno-dispaly-result .keno-logo-jackpot {
+    background: url(/static/keno/images/games/keno-jackpot-logo.png), url(/static/keno/images/games/keno-bc.png);
+    background-position: left, center;
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
+    height: 56px;
+}
+
+.keno-dispaly-result .keno-log-jackpoto img {
+    width: 100%;
+    display: block;
+    height: auto;
+}

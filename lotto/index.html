@@ -1,0 +1,1448 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <input type="hidden" name="csrfmiddlewaretoken" value="uZPco3NlPYU0XYk70Il2rZtbgmgBIPoP9wVz0URiemv1Be2sMBH5X69IWSScfywB">
+
+    <link rel="shortcut icon" type="image/png" href="/lotto/static/user_portal/assets/ico.png">
+    <title>LOTTO8888</title>
+    <link rel="icon" type="image/x-icon" href="/images/lotto8888.icon">
+
+
+
+    <link rel="stylesheet" href='/lotto/static/user_portal/css/style.css' type="text/css" />
+    <link type="text/css" rel="stylesheet" href="/lotto/static/lotto/css/mreset.css">
+    <link type="text/css" rel="stylesheet" href="/lotto/static/lotto/css/style.css?ver=11adfasfas" rel="stylesheet">
+    <!--<link rel="stylesheet" href='/lotto/static/lotto/css/keno.css?ver=12' type="text/css" />-->
+    <script src="/lotto/static/lotto/js/jquery-2.1.4.min.js"></script>
+    <script src="/lotto/static/lotto/js/jquery.cookie.js"></script>
+
+
+    <link rel='stylesheet' href='/lotto/static/user_portal/css/calendar.css'>
+    <link rel='stylesheet' href='/lotto/static/user_portal/css/animate.min.css'>
+    <link rel='stylesheet' href='/lotto/static/user_portal/css/loading.css'>
+    <link rel='stylesheet' href='/lotto/static/user_portal/css/clean-blue.css'>
+    <link rel='stylesheet' href='/lotto/static/user_portal/css/jquery-impromptu.min.css'>
+    <link rel='stylesheet' href='/lotto/static/user_portal/css/impromptu.css'>
+
+    <script src='/lotto/static/user_portal/js/jquery-1.10.2.js'></script>
+    <script src='/lotto/static/user_portal/js/jquery.min.js'></script>
+    <script src='/lotto/static/user_portal/js/jquery-cookie.js'></script>
+    <script src='/lotto/static/user_portal/js/jquery-impromptu.min.js'></script>
+    <script src='/lotto/static/user_portal/js/utils.js?ver=33333'></script>
+    <script src='/lotto/static/user_portal/js/printThis.js'></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-firestore.js"></script>
+
+    <script src="/lotto/static/lotto/js/_v7_common.js"></script>
+    <script src="/lotto/static/lotto/js/_baccarat_road.js"></script>
+    <script src="/lotto/static/lotto/js/_livecasino_baccarat_h5.js"></script>
+    <script src="/lotto/static/lotto/js/core.min.js"></script>
+    <script src="/lotto/static/lotto/js/chili.js"></script>
+    <script src="/lotto/static/lotto/js/gamescommon.js"></script>
+
+    <script src='/lotto/static/lotto/js/howler.js'></script>
+
+    <script>
+        // api = "/api-keno.sbc369.asia/api/";
+        api = "https://api-keno.sbc369.asia/api/";
+        env = "PROD";
+        currency = "KHR";
+
+        var firebaseConfig;
+
+        if (env == 'DEV')
+
+            firebaseConfig = {
+                apiKey: "AIzaSyAYD5mJTSsggpFqTcr8tFOmaGrHYCWKG-Y",
+                authDomain: "cocks-dev.firebaseapp.com",
+                databaseURL: "https://cocks-dev.firebaseio.com",
+                projectId: "cocks-dev",
+                storageBucket: "cocks-dev.appspot.com",
+                messagingSenderId: "1006353546625",
+                appId: "1:1006353546625:web:9da95dc67c2311e833bc80"
+            };
+        else {
+            firebaseConfig = {
+                apiKey: "AIzaSyDzltYo6-B7wZywYese5MWKgPvaK2sD6lY",
+                authDomain: "cocks-43140.firebaseapp.com",
+                databaseURL: "https://cocks-43140.firebaseio.com",
+                projectId: "cocks-43140",
+                storageBucket: "cocks-43140.appspot.com",
+                messagingSenderId: "107519811824",
+                appId: "1:107519811824:web:2ee1b87a146b17a0"
+            };
+        }
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        db = firebase.firestore();
+
+        db.collection('members').doc('{0}'.format($.cookie("username").toUpperCase()))
+
+            .onSnapshot(function(doc) {
+
+                $("#balance").text(financial(doc.get('balance')) + " (KHR)");
+
+            });
+
+
+
+        var SoundBefore = new Howl({
+            src: ['/lotto/static/lotto/sound/prepare_new.mp3'],
+        });
+        var SoundNo = new Howl({
+            src: ['/lotto/static/lotto/sound/sound_no_new.mp3'],
+        });
+        var SoundAfter = new Howl({
+            src: ['/lotto/static/lotto/sound/after_new.mp3'],
+        });
+        // var SoundBonus = new Howl({ src: ['/lotto/static/lotto/sound/lotto_bonus.mp3'],});
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+    <div id="betLoading" class="loading" style="display:none">Loading&#8230;</div>
+
+    <div>
+
+        <!--      <audio controls id="SoundBefore" style="display:none">-->
+        <!-- 		<source src="/lotto/static/lotto/sound/prepare_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+        <!--<audio controls id="SoundNo" style="display:none">-->
+        <!-- 		<source src="/lotto/static/lotto/sound/sound_no_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+        <!--<audio controls id="SoundAfter" style="display:none">-->
+        <!-- 		<source src="/lotto/static/lotto/sound/after_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+
+        <div id="main">
+
+            <div style="display:none;">
+                <div class="invoice"></div>
+            </div>
+
+            <!-- Header Section -->
+            <table border="0" cellpadding="0" cellspacing="0" id="header" style="width:100%;min-width:1736px">
+                <tbody>
+                    <tr>
+                        <td class="logo" rowspan="2" style="padding-top:0px;box-sizing:content-box;">
+                            <div><img src="/images/logo.png" class="login_icons" /></div>
+                        </td>
+                        <td height="50">
+                            <div class="user_wel">
+                                Welcome,<span id="spanLoginID"></span><span id="balance" style="padding-left:5px;color:#1F87CC;font-weight: bold;"></span>
+                            </div>
+
+                            <ul class="lang">
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('en')">English</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('kh')">ខ្មែរ</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('th')">ไทย</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('vn')">Tiếng Việt</a></li>
+
+                            </ul>
+                        </td>
+                        <td class="logout" rowspan="2" id="tdLiveChat">
+                            <a href="/" class="btn_logout" style="color: #fff; padding: 20px; cursor: pointer;">Logout</a>
+                        </td>
+                    </tr>
+                    <!-- Text Maquess -->
+                    <tr>
+                        <td class="marquee" id="mar_news">
+                            <marquee direction="left" id="spShowNews" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+                                សូមស្វាគមន័មកកាន់ឡូតូ8888 ជូនពរសំណាងល្អរៀងរាល់ថ្ងៃ
+                            </marquee>
+                        </td>
+                    </tr>
+                    <!-- // text Maquse-->
+
+                </tbody>
+            </table>
+            <!--  // Header Section -->
+            <!-- main menu -->
+            <div id="navigator" style="width:100%;min-width:1736px">
+                <ul class="nav" id="nav">
+
+                    <li><a id="tabhome" href="/home/">ដំណឹង</a></li>
+                    <li> <a id="tablotto" href="/lotto/">ឡូតូ</a></li>
+                    <li><a id="tabbalance" href="/sport/balance/">តុល្យភាព</a></li>
+                    <li><a id="tabstatement" href="/sport/statement/">របាយការណ៏</a></li>
+                    <li><a id="tabpassword" href="/sport/password/">លេខសម្ងាត់ </a></li>
+
+                </ul>
+            </div>
+            <!-- // main menu -->
+
+        </div>
+
+        <div class="main-content" id="main-content" style="position:relative;">
+
+
+
+            <div id="navigator" style="width:100%;min-width:1736px">
+                <ul class="sub">
+                    <li><a href="/lotto/" class="hover">ឡូតូ</a></li>
+                    <li><a href="/lotto/win_result/">របាយការណ៏នៃការឈ្នះ</a></li>
+                    <li><a href="/lotto/win_result_v1/">របាយការណ៏នៃការឈ្នះ 1</a></li>
+                    <li><a href="/lotto/results/">លទ្ឋផល</a></li>
+                </ul>
+
+            </div>
+
+            <input type='hidden' id="round_status">
+
+            <div class="wrapper-new-keno" style="width:100%;min-width:1736px">
+
+                <div class="new-keno-left">
+                    <h3><span id="header-info"></span> <a id="refresh_balance" class="keno-refresh"></a></h3>
+                    <div class="group-betcredit">
+                        <label class="betcredit-label">ចំនួនទឹកប្រាក់:</label>
+                        <p class="total-amount" id="user-balance"></p>
+                    </div>
+                    <div class="group-betcredit">
+                        <label class="betcredit-label">ទឺកប្រាក់ភ្នាល់:</label>
+                        <p id="outStanding" class="total-amount"></p>
+                    </div>
+                    <h3>លទ្ធផលចុងក្រោយ <a id="refresh_game" class="keno-refresh"></a></h3>
+                    <ul class="result-list-now">
+                        <li>
+                            <p class="result-now" id="result-now-1"></p>
+                            <p class="result-total" id="result-total-1"></p>
+                        </li>
+                        <li>
+                            <p class="result-now" id="result-now-2"></p>
+                            <p class="result-total" id="result-total-2"></p>
+                        </li>
+                        <li>
+                            <p class="result-now" id="result-now-3"></p>
+                            <p class="result-total" id="result-total-3"></p>
+                        </li>
+                        <li>
+                            <p class="result-now" id="result-now-4"></p>
+                            <p class="result-total" id="result-total-4"></p>
+                        </li>
+                        <li>
+                            <p class="result-now" id="result-now-5"></p>
+                            <p class="result-total" id="result-total-5"></p>
+                        </li>
+                    </ul>
+                    <h3>បុងភ្នាល់ <a id="refresh_bet" class="keno-refresh"></a></h3>
+                    <ul id="betListNow" class="bet-list-now"></ul>
+                </div>
+
+                <div class="new-keno-right">
+
+                    <div class="keno-play-main">
+                        <div class="keno-dispaly-result">
+                            <div class="keno-logo">
+
+                            </div>
+                            <div class="keno-total">
+                                <p class="period-result" id="period-result" translate="no"></p>
+                                <div class="keno-row">
+                                    <label class="label-title">សរុប:</label>
+                                    <p class="total-result" id="total_result" translate="no"></p>
+                                </div>
+                            </div>
+                            <div class="keno-content-result">
+                                <table id="keno_result_post" border="1" cellpadding="0" cellspacing="0" width="263px;">
+                                    <tbody>
+                                        <tr>
+                                            <td id="keno-key1" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="1">
+                        <span>1</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key2" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="2">
+                        <span>2</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key3" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="3">
+                          <span>3</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key4" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="4">
+                        <span>4</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key5" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="5">
+                          <span>5</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key6" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="6">
+                          <span>6</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key7" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="7">
+                          <span>7</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key8" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="8">
+                        <span>8</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key9" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="9">
+                        <span>9</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key10" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="10">
+                          <span>10</span>
+                        </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="keno-key11" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="11">
+                        <span>11</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key12" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="12">
+                        <span>12</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key13" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="13">
+                        <span>13</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key14" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="14">
+                        <span>14</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key15" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="15">
+                        <span>15</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key16" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="16">
+                        <span>16</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key17" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="17">
+                        <span>17</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key18" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="18">
+                        <span>18</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key19" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="19">
+                        <span>19</span>
+                        </a>
+                                            </td>
+                                            <td id="keno-key20" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="20">
+                        <span>20</span>
+                        </a>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td id="keno-key21" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="21">
+                        <span>21</span></td>
+                        </a>
+                                                <td id="keno-key22" width="26px" height="28px">
+                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="22">
+                        <span>22</span></td>
+                        </a>
+                                                    <td id="keno-key23" width="26px" height="28px">
+                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="23">
+                        <span>23</span></td>
+                        </a>
+                                                        <td id="keno-key24" width="26px" height="28px">
+                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="24">
+                        <span>24</span></td>
+                        </a>
+                                                            <td id="keno-key25" width="26px" height="28px">
+                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="25">
+                        <span>25</span></td>
+                        </a>
+                                                                <td id="keno-key26" width="26px" height="28px">
+                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="26">
+                        <span>26</span></td>
+                        </a>
+                                                                    <td id="keno-key27" width="26px" height="28px">
+                                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="27">
+                        <span>27</span></td>
+                        </a>
+                                                                        <td id="keno-key28" width="26px" height="28px">
+                                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="28">
+                        <span>28</span></td>
+                        </a>
+                                                                            <td id="keno-key29" width="26px" height="28px">
+                                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="29">
+                        <span>29</span></td>
+                        </a>
+                                                                                <td id="keno-key30" width="26px" height="28px">
+                                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="30">
+                        <span>30</span></td>
+                        </a>
+                                        </tr>
+                                        <tr>
+                                            <td id="keno-key31" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="31">
+                        <span>31</span></td></a>
+                                                <td id="keno-key32" width="26px" height="28px">
+                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="32">
+                        <span>32</span></td></a>
+                                                    <td id="keno-key33" width="26px" height="28px">
+                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="33">
+                        <span>33</span></td></a>
+                                                        <td id="keno-key34" width="26px" height="28px">
+                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="34">
+                        <span>34</span></td></a>
+                                                            <td id="keno-key35" width="26px" height="28px">
+                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="35">
+                        <span>35</span></td></a>
+                                                                <td id="keno-key36" width="26px" height="28px">
+                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="36">
+                        <span>36</span></td></a>
+                                                                    <td id="keno-key37" width="26px" height="28px">
+                                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="37">
+                        <span>37</span></td></a>
+                                                                        <td id="keno-key38" width="26px" height="28px">
+                                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="38">
+                        <span>38</span></td></a>
+                                                                            <td id="keno-key39" width="26px" height="28px">
+                                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="39">
+                        <span>39</span></td></a>
+                                                                                <td id="keno-key40" width="26px" height="28px">
+                                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="40">
+                        <span>40</span></td></a>
+                                        </tr>
+                                        <tr>
+                                            <td id="keno-key41" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="41">
+                        <span>41</span></td></a>
+                                                <td id="keno-key42" width="26px" height="28px">
+                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="42">
+                        <span>42</span></td></a>
+                                                    <td id="keno-key43" width="26px" height="28px">
+                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="43">
+                        <span>43</span></td></a>
+                                                        <td id="keno-key44" width="26px" height="28px">
+                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="44">
+                        <span>44</span></td></a>
+                                                            <td id="keno-key45" width="26px" height="28px">
+                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="45">
+                        <span>45</span></td></a>
+                                                                <td id="keno-key46" width="26px" height="28px">
+                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="46">
+                        <span>46</span></td></a>
+                                                                    <td id="keno-key47" width="26px" height="28px">
+                                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="47">
+                        <span>47</span></td></a>
+                                                                        <td id="keno-key48" width="26px" height="28px">
+                                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="48">
+                        <span>48</span></td></a>
+                                                                            <td id="keno-key49" width="26px" height="28px">
+                                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="49">
+                        <span>49</span></td></a>
+                                                                                <td id="keno-key50" width="26px" height="28px">
+                                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="50">
+                        <span>50</span></td></a>
+                                        </tr>
+                                        <tr>
+                                            <td id="keno-key51" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="51">
+                        <span>51</span></td></a>
+                                                <td id="keno-key52" width="26px" height="28px">
+                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="52">
+                        <span>52</span></td></a>
+                                                    <td id="keno-key53" width="26px" height="28px">
+                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="53">
+                        <span>53</span></td></a>
+                                                        <td id="keno-key54" width="26px" height="28px">
+                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="54">
+                        <span>54</span></td></a>
+                                                            <td id="keno-key55" width="26px" height="28px">
+                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="55">
+                        <span>55</span></td></a>
+                                                                <td id="keno-key56" width="26px" height="28px">
+                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="56">
+                        <span>56</span></td></a>
+                                                                    <td id="keno-key57" width="26px" height="28px">
+                                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="57">
+                        <span>57</span></td></a>
+                                                                        <td id="keno-key58" width="26px" height="28px">
+                                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="58">
+                        <span>58</span></td></a>
+                                                                            <td id="keno-key59" width="26px" height="28px">
+                                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="59">
+                        <span>59</span></td></a>
+                                                                                <td id="keno-key60" width="26px" height="28px">
+                                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="60">
+                        <span>60</span></td></a>
+                                        </tr>
+                                        <tr>
+                                            <td id="keno-key61" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="61">
+                        <span>61</span></td></a>
+                                                <td id="keno-key62" width="26px" height="28px">
+                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="62">
+                        <span>62</span></td></a>
+                                                    <td id="keno-key63" width="26px" height="28px">
+                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="63">
+                        <span>63</span></td></a>
+                                                        <td id="keno-key64" width="26px" height="28px">
+                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="64">
+                        <span>64</span></td></a>
+                                                            <td id="keno-key65" width="26px" height="28px">
+                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="65">
+                        <span>65</span></td></a>
+                                                                <td id="keno-key66" width="26px" height="28px">
+                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="66">
+                        <span>66</span></td></a>
+                                                                    <td id="keno-key67" width="26px" height="28px">
+                                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="67">
+                        <span>67</span></td></a>
+                                                                        <td id="keno-key68" width="26px" height="28px">
+                                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="68">
+                        <span>68</span></td></a>
+                                                                            <td id="keno-key69" width="26px" height="28px">
+                                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="69">
+                        <span>69</span></td></a>
+                                                                                <td id="keno-key70" width="26px" height="28px">
+                                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="70">
+                        <span>70</span></td></a>
+                                        </tr>
+                                        <tr>
+                                            <td id="keno-key71" width="26px" height="28px">
+                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="71">
+                        <span>71</span></td></a>
+                                                <td id="keno-key72" width="26px" height="28px">
+                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="72">
+                        <span>72</span></td></a>
+                                                    <td id="keno-key73" width="26px" height="28px">
+                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="73">
+                        <span>73</span></td></a>
+                                                        <td id="keno-key74" width="26px" height="28px">
+                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="74">
+                        <span>74</span></td></a>
+                                                            <td id="keno-key75" width="26px" height="28px">
+                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="75">
+                        <span>75</span></td></a>
+                                                                <td id="keno-key76" width="26px" height="28px">
+                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="76">
+                        <span>76</span></td></a>
+                                                                    <td id="keno-key77" width="26px" height="28px">
+                                                                        <a href="javascript:void(0)" data-bet-type="number" data-bet="77">
+                        <span>77</span></td></a>
+                                                                        <td id="keno-key78" width="26px" height="28px">
+                                                                            <a href="javascript:void(0)" data-bet-type="number" data-bet="78">
+                        <span>78</span></td></a>
+                                                                            <td id="keno-key79" width="26px" height="28px">
+                                                                                <a href="javascript:void(0)" data-bet-type="number" data-bet="79">
+                        <span>79</span></td></a>
+                                                                                <td id="keno-key80" width="26px" height="28px">
+                                                                                    <a href="javascript:void(0)" data-bet-type="number" data-bet="80">
+                        <span>80</span></td></a>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <div class="keno-play-right">
+                            <div class="random-play">
+                                <div class="loading-gif">
+                                    <!--<img width="27" src="/lotto/static/keno/images/games/spinner1.gif"/>-->
+                                    <p class="timer-loading" id="timer" translate="no" style="color:#fff;padding-top:37px;font-size: 18px;font-weight: 400;line-height: 18px;"></p>
+                                </div>
+                                <div class="blgo-random-number">
+                                    <p class="msg-bet" style="display:none;">Please Bet</p>
+                                    <canvas id="random_number" width="70" height="147" style="margin:0 auto;display: block;"></canvas>
+                                </div>
+                                <div class="div-result" style="display:none;">
+                                    <div class="div-result-ram">
+                                        <div id="r_num" style="display: block;height: 50px;padding-top: 5px;"></div>
+                                        <div class="dot"></div>
+                                    </div>
+                                    <div class="div-result-no"></div>
+                                    <div class="div-result-total"></div>
+                                </div>
+
+                            </div>
+
+                            <div class="blog-play">
+                                <div class="bet-period-timer">
+                                    <p id="period-before" translate="no"></p>
+                                    <p id="timer-display"></p>
+                                </div>
+                                <div class="over-under-odd-even" style="margin-left:1px;">
+                                    <div class="group-play-box">
+                                        <label onclick="">តូច/ធំ</label>
+
+                                        <div class="box-bet box-bet-left" style="float:left;background-size: 162px 117px;background:linear-gradient(to bottom, #0f00fe 0%, #5a41ec 50%, #0f00fe 100%)">
+                                            <a id="ou-under" class="keno-bet" style="height:90px;" href="javascript:void(0)" onclick="kenoOpenModal(this)" data-bet-type="overunder" data-bet="under" betinfo-value="Under" betinfo-range="210-810">
+                                                <p class="type" style="color:#fff;">តូច</p>
+
+                                            </a>
+                                        </div>
+
+                                        <div class="box-bet box-bet-left" style="height: 49px;position: absolute;margin-top: 91px;background-image: none;">
+                                            <p class="range">210-810</p>
+                                            <p class="odds">1.95</p>
+                                        </div>
+
+                                        <div class="box-bet box-bet-right" style="margin-right: -1px;width: 159px;float:right; background-size: 162px 117px;background:linear-gradient(to bottom, #990000 0%, #df1e1e 50%, #990000 100%)">
+                                            <a id="ou-over" class="keno-bet" style="height:90px;" href="javascript:void(0)" onclick="kenoOpenModal(this)" data-bet-type="overunder" data-bet="over" betinfo-value="Over" betinfo-range="811-1410">
+                                                <p class="type" style="color:#fff;">ធំ</p>
+                                            </a>
+                                        </div>
+
+                                        <div class="box-bet box-bet-right" style="margin-right:-1px;width:160px;height: 49px; margin-top: -2px;float: right;background-image: none;">
+                                            <p class="range">811- 1410</p>
+                                            <p class="odds">1.95</p>
+                                        </div>
+
+
+
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+
+                            <div class="over-under-odd-even range-type">
+
+                                <div class="group-play-box">
+                                    <label onclick="" class="range-over-under-odd-even">ចន្លោះលេខ</label>
+
+                                    <div class="box-bet box-bet-left">
+                                        <a id="range-210-695" class="keno-bet" style="padding-top:0px;" href="javascript:void(0)" onclick="kenoOpenModal(this)" data-bet-type="range" data-bet="210-695" betinfo-value="1" betinfo-range="210-695">
+                                            <p class="type">1</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="box-bet box-bet-left">
+                                        <a id="range-696-763" class="keno-bet" style="padding-top:0px;" href="javascript:void(0)" onclick="kenoOpenModal(this)" data-bet-type="range" data-bet="696-763" betinfo-value="2" betinfo-range="696-763">
+                                            <p class="type">2</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="box-bet box-bet-left">
+                                        <a id="range-764-855" class="keno-bet" style="padding-top:0px;" href="javascript:void(0)" onclick="kenoOpenModal(this)" data-bet-type="range" data-bet="764-855" betinfo-value="3" betinfo-range="764-855">
+                                            <p class="type">3</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="box-bet box-bet-right">
+                                        <a id="range-856-923" class="keno-bet" style="padding-top:0px;" href="javascript:void(0)" onclick="kenoOpenModal(this)" data-bet-type="range" data-bet="856-923" betinfo-value="4" betinfo-range="856-923">
+                                            <p class="type">4</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="box-bet">
+                                        <a id="range-924-1410" class="keno-bet" style="padding-top:0px;" href="javascript:void(0)" onclick="kenoOpenModal(this)" data-bet-type="range" data-bet="924-1410" betinfo-value="5" betinfo-range="924-1410">
+                                            <p class="type">5</p>
+                                        </a>
+                                    </div>
+
+                                    <div class="box-bet box-bet-right" style="height:48px;">
+                                        <p class="range">210-695</p>
+                                        <p class="odds">9.20 <span id="o210-695"></span></p>
+
+                                    </div>
+
+                                    <div class="box-bet box-bet-right" style="height:48px;">
+                                        <p class="range">696-763</p>
+                                        <p class="odds">4.60 <span id="o696-763"></span></p>
+
+                                    </div>
+
+                                    <div class="box-bet box-bet-right" style="height:48px;">
+                                        <p class="range">764-855</p>
+                                        <p class="odds">2.30 <span id="o764-855"></span></p>
+                                    </div>
+
+                                    <div class="box-bet box-bet-right" style="height:48px;">
+                                        <p class="range">856-923</p>
+                                        <p class="odds">4.60 <span id="o856-923"></span></p>
+                                    </div>
+
+                                    <div class="box-bet box-bet-right" style="height:48px;">
+                                        <p class="range">924- 1410</p>
+                                        <p class="odds">9.20 <span id="o924-1410"></span></p>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <table class="history-result" width="100%" border="1" cellpadding="0" cellspacing="0">
+
+                            <tbody id="tdhistory">
+
+                                <tr class="history-row-1">
+                                    <td id="1-1"></td>
+                                    <td id="2-1"></td>
+                                    <td id="3-1"></td>
+                                    <td id="4-1"></td>
+                                    <td id="5-1"></td>
+                                    <td id="6-1"></td>
+                                    <td id="7-1"></td>
+                                    <td id="8-1"></td>
+                                    <td id="9-1"></td>
+                                    <td id="10-1"></td>
+                                    <td id="11-1"></td>
+                                    <td id="12-1"></td>
+                                    <td id="13-1"></td>
+                                    <td id="14-1"></td>
+                                    <td id="15-1"></td>
+                                    <td id="16-1"></td>
+                                    <td id="17-1"></td>
+                                    <td id="18-1"></td>
+                                    <td id="19-1"></td>
+                                    <td id="20-1"></td>
+                                </tr>
+
+                                <tr class="history-row-2">
+                                    <td id="1-2"></td>
+                                    <td id="2-2"></td>
+                                    <td id="3-2"></td>
+                                    <td id="4-2"></td>
+                                    <td id="5-2"></td>
+                                    <td id="6-3"></td>
+                                    <td id="7-2"></td>
+                                    <td id="8-2"></td>
+                                    <td id="9-2"></td>
+                                    <td id="10-2"></td>
+                                    <td id="11-2"></td>
+                                    <td id="12-2"></td>
+                                    <td id="13-2"></td>
+                                    <td id="14-2"></td>
+                                    <td id="15-2"></td>
+                                    <td id="16-2"></td>
+                                    <td id="17-2"></td>
+                                    <td id="18-2"></td>
+                                    <td id="19-2"></td>
+                                    <td id="20-2"></td>
+                                </tr>
+
+                                <tr class="history-row-3">
+                                    <td id="1-3"></td>
+                                    <td id="2-3"></td>
+                                    <td id="3-3"></td>
+                                    <td id="4-3"></td>
+                                    <td id="5-3"></td>
+                                    <td id="6-3"></td>
+                                    <td id="7-3"></td>
+                                    <td id="8-3"></td>
+                                    <td id="9-3"></td>
+                                    <td id="10-3"></td>
+                                    <td id="11-3"></td>
+                                    <td id="12-3"></td>
+                                    <td id="13-3"></td>
+                                    <td id="14-3"></td>
+                                    <td id="15-3"></td>
+                                    <td id="16-3"></td>
+                                    <td id="17-3"></td>
+                                    <td id="18-3"></td>
+                                    <td id="19-3"></td>
+                                    <td id="20-3"></td>
+                                </tr>
+
+                                <tr class="history-row-4">
+                                    <td id="1-4"></td>
+                                    <td id="2-4"></td>
+                                    <td id="3-4"></td>
+                                    <td id="4-4"></td>
+                                    <td id="5-4"></td>
+                                    <td id="6-4"></td>
+                                    <td id="7-4"></td>
+                                    <td id="8-4"></td>
+                                    <td id="9-4"></td>
+                                    <td id="10-4"></td>
+                                    <td id="11-4"></td>
+                                    <td id="12-4"></td>
+                                    <td id="13-4"></td>
+                                    <td id="14-4"></td>
+                                    <td id="15-4"></td>
+                                    <td id="16-4"></td>
+                                    <td id="17-4"></td>
+                                    <td id="18-4"></td>
+                                    <td id="19-4"></td>
+                                    <td id="20-4"></td>
+                                </tr>
+
+                                <tr class="history-row-5">
+                                    <td id="1-5"></td>
+                                    <td id="2-5"></td>
+                                    <td id="3-5"></td>
+                                    <td id="4-5"></td>
+                                    <td id="5-5"></td>
+                                    <td id="6-5"></td>
+                                    <td id="7-5"></td>
+                                    <td id="8-5"></td>
+                                    <td id="9-5"></td>
+                                    <td id="10-5"></td>
+                                    <td id="11-5"></td>
+                                    <td id="12-5"></td>
+                                    <td id="13-5"></td>
+                                    <td id="14-5"></td>
+                                    <td id="15-5"></td>
+                                    <td id="16-5"></td>
+                                    <td id="17-5"></td>
+                                    <td id="18-5"></td>
+                                    <td id="19-5"></td>
+                                    <td id="20-5"></td>
+                                </tr>
+
+                                <tr class="history-row-6">
+                                    <td id="1-6"></td>
+                                    <td id="2-6"></td>
+                                    <td id="3-6"></td>
+                                    <td id="4-6"></td>
+                                    <td id="5-6"></td>
+                                    <td id="6-6"></td>
+                                    <td id="7-6"></td>
+                                    <td id="8-6"></td>
+                                    <td id="9-6"></td>
+                                    <td id="10-6"></td>
+                                    <td id="11-6"></td>
+                                    <td id="12-6"></td>
+                                    <td id="13-6"></td>
+                                    <td id="14-6"></td>
+                                    <td id="15-6"></td>
+                                    <td id="16-6"></td>
+                                    <td id="17-6"></td>
+                                    <td id="18-6"></td>
+                                    <td id="19-6"></td>
+                                    <td id="20-6"></td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="new-keno-right">
+
+                    <div id="divlogo" style="height:347px;text-align:center;">
+                        <img src="/images/lotto88881.gif" class="login_icons" style="width: 300px;text-align: center;padding-top: 24px;" />
+                        <!-- <div style="position: relative;display: block;font-weight: bold;color: #1F87CC;font-size:20px;text-align:left;">LAMMFFHT001</div> -->
+                        <div class="spanLoginID" style="position: relative;display: block;font-weight: bold;color: #1F87CC;font-size:20px;text-align:left;"></div>
+
+                    </div>
+
+                    <!--<iframe id="divlive" width="0px;" height="0px;" src="#" allowfullscreen> </iframe>-->
+
+
+
+                    <table id="history-result-right" class="history-result" style="" width="100%" border="1" cellpadding="0" cellspacing="0">
+
+                        <tbody id="tdhistory-2">
+
+                            <tr class="history-row-1-2">
+                                <td id="1-1-2"></td>
+                                <td id="2-1-2"></td>
+                                <td id="3-1-2"></td>
+                                <td id="4-1-2"></td>
+                                <td id="5-1-2"></td>
+                                <td id="6-1-2"></td>
+                                <td id="7-1-2"></td>
+                                <td id="8-1-2"></td>
+                                <td id="9-1-2"></td>
+                                <td id="10-1-2"></td>
+                                <td id="11-1-2"></td>
+                                <td id="12-1-2"></td>
+                                <td id="13-1-2"></td>
+                                <td id="14-1-2"></td>
+                                <td id="15-1-2"></td>
+                                <td id="16-1-2"></td>
+                                <td id="17-1-2"></td>
+                                <td id="18-1-2"></td>
+                                <td id="19-1-2"></td>
+                                <td id="20-1-2"></td>
+                            </tr>
+
+                            <tr class="history-row-2-2">
+                                <td id="1-2-2"></td>
+                                <td id="2-2-2"></td>
+                                <td id="3-2-2"></td>
+                                <td id="4-2-2"></td>
+                                <td id="5-2-2"></td>
+                                <td id="6-3-2"></td>
+                                <td id="7-2-2"></td>
+                                <td id="8-2-2"></td>
+                                <td id="9-2-2"></td>
+                                <td id="10-2-2"></td>
+                                <td id="11-2-2"></td>
+                                <td id="12-2-2"></td>
+                                <td id="13-2-2"></td>
+                                <td id="14-2-2"></td>
+                                <td id="15-2-2"></td>
+                                <td id="16-2-2"></td>
+                                <td id="17-2-2"></td>
+                                <td id="18-2-2"></td>
+                                <td id="19-2-2"></td>
+                                <td id="20-2-2"></td>
+                            </tr>
+
+                            <tr class="history-row-3-2">
+                                <td id="1-3-2"></td>
+                                <td id="2-3-2"></td>
+                                <td id="3-3-2"></td>
+                                <td id="4-3-2"></td>
+                                <td id="5-3-2"></td>
+                                <td id="6-3-2"></td>
+                                <td id="7-3-2"></td>
+                                <td id="8-3-2"></td>
+                                <td id="9-3-2"></td>
+                                <td id="10-3-2"></td>
+                                <td id="11-3-2"></td>
+                                <td id="12-3-2"></td>
+                                <td id="13-3-2"></td>
+                                <td id="14-3-2"></td>
+                                <td id="15-3-2"></td>
+                                <td id="16-3-2"></td>
+                                <td id="17-3-2"></td>
+                                <td id="18-3-2"></td>
+                                <td id="19-3-2"></td>
+                                <td id="20-3-2"></td>
+                            </tr>
+
+                            <tr class="history-row-4-2">
+                                <td id="1-4-2"></td>
+                                <td id="2-4-2"></td>
+                                <td id="3-4-2"></td>
+                                <td id="4-4-2"></td>
+                                <td id="5-4-2"></td>
+                                <td id="6-4-2"></td>
+                                <td id="7-4-2"></td>
+                                <td id="8-4-2"></td>
+                                <td id="9-4-2"></td>
+                                <td id="10-4-2"></td>
+                                <td id="11-4-2"></td>
+                                <td id="12-4-2"></td>
+                                <td id="13-4-2"></td>
+                                <td id="14-4-2"></td>
+                                <td id="15-4-2"></td>
+                                <td id="16-4-2"></td>
+                                <td id="17-4-2"></td>
+                                <td id="18-4-2"></td>
+                                <td id="19-4-2"></td>
+                                <td id="20-4-2"></td>
+                            </tr>
+
+                            <tr class="history-row-5-2">
+                                <td id="1-5-2"></td>
+                                <td id="2-5-2"></td>
+                                <td id="3-5-2"></td>
+                                <td id="4-5-2"></td>
+                                <td id="5-5-2"></td>
+                                <td id="6-5-2"></td>
+                                <td id="7-5-2"></td>
+                                <td id="8-5-2"></td>
+                                <td id="9-5-2"></td>
+                                <td id="10-5-2"></td>
+                                <td id="11-5-2"></td>
+                                <td id="12-5-2"></td>
+                                <td id="13-5-2"></td>
+                                <td id="14-5-2"></td>
+                                <td id="15-5-2"></td>
+                                <td id="16-5-2"></td>
+                                <td id="17-5-2"></td>
+                                <td id="18-5-2"></td>
+                                <td id="19-5-2"></td>
+                                <td id="20-5-2"></td>
+                            </tr>
+
+                            <tr class="history-row-6-2">
+                                <td id="1-6-2"></td>
+                                <td id="2-6-2"></td>
+                                <td id="3-6-2"></td>
+                                <td id="4-6-2"></td>
+                                <td id="5-6-2"></td>
+                                <td id="6-6-2"></td>
+                                <td id="7-6-2"></td>
+                                <td id="8-6-2"></td>
+                                <td id="9-6-2"></td>
+                                <td id="10-6-2"></td>
+                                <td id="11-6-2"></td>
+                                <td id="12-6-2"></td>
+                                <td id="13-6-2"></td>
+                                <td id="14-6-2"></td>
+                                <td id="15-6-2"></td>
+                                <td id="16-6-2"></td>
+                                <td id="17-6-2"></td>
+                                <td id="18-6-2"></td>
+                                <td id="19-6-2"></td>
+                                <td id="20-6-2"></td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+            <div class="keno-bet-modal" style="display:none;top:-250px;">
+                <div class="wrap-content">
+                    <div class="header-modal">
+                        <div class="box-nk">
+                            <p id="period" style="color: #fff;"></p>
+                            <!--<p id="bet_value" style="color: #c36519;"></p>-->
+                            <!--<p>Username: LAMMFFHT001</p>-->
+                        </div>
+                        <span class="close-tab" onclick="kenoCloseModal()">
+                x
+              </span>
+                    </div>
+                    <div class="content-modal">
+                        <div class="wraper-info">
+                            <table>
+                                <tbody style="text-align: center;font-weight: bold;">
+                                    <tr>
+                                        <td>
+                                            <span style='display:none;' id="bet_value"></span>
+                                            <span id="bet_value_kh"></span>
+                                        </td>
+                                        <td>
+                                            <span id="bet_time"></span>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+                                            <span id="bet_range"></span>
+                                        </td>
+                                        <td>
+                                            <span id="bet_odd"></span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <!--<hr>-->
+                            <div style="clear:both"></div>
+                            <input type="hidden" id="odds" name="odds" value="5.00">
+                            <input type="hidden" name="playtype" id="playtype" value="Frequence#1#1">
+                            <input type="hidden" name="amount" id="amount">
+                            <input type="hidden" id="bet_limit" name="bet_limit" value="1-1000">
+                            <input type="hidden" id="max_total" name="max_total" value="10000">
+
+                        </div>
+
+                        <div class="wraper-bet">
+                            <label><span style="color:#fff">Stake : </span><input type="number" class="allownumericwithoutdecimal" name="amount" maxlength="9" 
+                autocomplete="off" disableautocomplete="" id="keno-amount">
+                </label>
+
+
+
+                            <div class="button-bet btn-price" onclick="kenoBet(1000)" data="1000"><span class="title-button-bet">១ពាន់</span></div>
+                            <div class="button-bet btn-price" onclick="kenoBet(2000)" data="2000"><span class="title-button-bet">២ពាន់</span></div>
+                            <div class="button-bet btn-price" onclick="kenoBet(5000)" data="5000"><span class="title-button-bet">៥ពាន់</span></div>
+                            <div class="button-bet btn-price" onclick="kenoBet(10000)" data="10000"><span class="title-button-bet">១ម៉ឺន</span></div>
+                            <div class="button-bet btn-price" onclick="kenoBet(20000)" data="20000"><span class="title-button-bet">២ម៉ឺន</span></div>
+                            <div class="button-bet btn-price" onclick="kenoBet(50000)" data="50000"><span class="title-button-bet">៥ម៉ឺន</span></div>
+                            <div class="button-bet btn-price" onclick="kenoBet(200000)" data="200000"><span class="title-button-bet">២០ម៉ឺន</span></div>
+                            <div class="button-bet btn-price" onclick="kenoBet(500000)" data="500000"><span class="title-button-bet">៥០ម៉ឺន</span></div>
+
+
+
+
+
+
+
+
+
+                        </div>
+                        <input type="hidden" id="total-amount">
+                        <hr>
+                        <p class="max-payout">Max Payout : <span class="net-amount"></span></p>
+                        <p class="max-payout">Bet Limit : <span id="label_limit"> 1000-10000000 </span></p>
+
+
+
+                    </div>
+                    <div class="wrap-btn" style="">
+
+                        <div id="divLoading-bet" style="display:none;padding-left:12px;padding-right: 12px;">
+                            <img src="/lotto/static/user_portal/assets/loadingAnimation.gif" />
+                        </div>
+
+                        <button disabled onclick="placeBet()" class="btn-modal-bet" id="btnBet" style="border: none;padding-top: 0px;background-color: #8000FF;">ចាក់</button>
+                        <button disabled onclick="placeBetnPrint()" class="btn-modal-bet" id="btnBetnPrint" style="border: none;padding-top: 0px;background-color: #8000FF;color:white;">ចាក់&ព្រីន</button>
+                        <a onclick="kenoCloseModal()" style="background-color:#bc1e2d" class="btn-modal-cancel close_modal">លុបចោល</a>
+                        <a onclick="resetBet()" class="btn-modal-reset" style="background-color:#8C8E92;">សារដើម</a>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div id="divLoadingCircle" class="loading" style="display:none">Loading&#8230;</div>
+
+            <div id="divLoading" style="display: none;"><img src="/lotto/static/user_portal/assets/loadingAnimation.gif"></div>
+
+            <div id="footer" style="z-index:5">
+                
+                <p class="copyright">© Copyright 2020 Lotto8888, All rights reserved </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src='/lotto/static/user_portal/js/moment.js'></script>
+    <script src='/lotto/static/user_portal/js/default.js'></script>
+    <script src='/lotto/static/user_portal/js/jquery.noty.packaged.min.js'></script>
+
+    <script src="/lotto/static/user_portal/js/js.cookie.js" type="text/javascript"></script>
+    <script src='/lotto/static/user_portal/js/language.js?ver=5'></script>
+
+
+
+    <script src="/lotto/static/lotto/js/clock.js" type="text/javascript"></script>
+    <script src="/lotto/static/lotto/js/bet.js?ver=111asdfasadfassafasdf" type="text/javascript"></script>
+    <script src="/lotto/static/lotto/js/howler.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href='/lotto/static/lotto/css/keno.css?ver=22' type="text/css" />
+
+    <script>
+        $(document).ready(function() {
+            function getCookie(name) {
+                var cookieValue = null;
+                if (document.cookie && document.cookie !== "") {
+                    var cookies = document.cookie.split(";");
+                    for (var i = 0; i < cookies.length; i++) {
+                        var cookie = $.trim(cookies[i]);
+                        if (cookie.substring(0, name.length + 1) === name + "=") {
+                            cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                            break;
+                        }
+                    }
+                }
+                return cookieValue;
+            }
+            $('#spanLoginID').text(getCookie("username"));
+            $('.spanLoginID').text(getCookie("username"));
+            $('#navigator .nav').removeClass('hover');
+            $('#tablotto').addClass("hover");
+
+        });
+
+        app_start = true;
+        app_result = false;
+        app_winlose = false;
+        var my_generate_ramdom;
+        var result_odd = "";
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== "") {
+                var cookies = document.cookie.split(";");
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = $.trim(cookies[i]);
+                    if (cookie.substring(0, name.length + 1) === name + "=") {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        function generate_ramdom() {
+            $("#r_num").text(Math.floor(Math.random() * 99) + 1)
+        }
+
+        db.collection('lotto5d').doc('round')
+
+            .onSnapshot(function(doc) {
+
+                cur_round = doc.get('next');
+
+                // timer
+                db.collection('lotto5d').doc('{0}'.format(cur_round))
+
+                    .onSnapshot(function(doc) {
+
+                        if (doc.get('timer') <= 6) {
+                            $('#timer').css('color', '#a94442')
+                            if (doc.get('timer') == 6) {
+
+                                // $("#SoundBefore")[0].play();
+                                SoundBefore.play();
+
+                            }
+                        } else {
+                            $('#timer').css('color', '#fff');
+                        }
+                        $("#timer").text(doc.get('timer'));
+
+                        $(".div-result").css("display", "none");
+
+                        if (doc.get('timer') == 1) {
+                            for (var i = 1; i <= 80; i++) {
+                                $('#keno-key{0}'.format(i)).removeClass('active');
+                            }
+                        }
+
+                        if (doc.get('timer') == 0) {
+                                $(".keno-bet-modal").hide();
+                            my_generate_ramdom = setInterval(generate_ramdom, 100);
+                        }
+
+
+                    });
+
+                // end of timer
+
+                // keno data
+
+                db.collection('lotto5d').doc('{0}'.format(cur_round)).collection('data').doc('{0}'.format(cur_round))
+
+                    .onSnapshot(function(doc) {
+
+                        $("#period-result").text('#' + doc.get('last_round'));
+
+                        $("#period-before").text('#' + doc.get('next_round'));
+
+                        $("#total_result").text(doc.get('total'));
+
+                        if (app_start == true) {
+                            for (var i = 1; i <= 80; i++) {
+
+                                num = doc.get('{0}'.format(i));
+                                if (num > 0)
+                                    $('#keno-key{0}'.format(num)).addClass('active');
+                                else
+                                    $('#keno-key{0}'.format(i)).removeClass('active');
+                            }
+                        }
+                        app_start = false;
+                    });
+
+                // end of keno data
+
+                // keno result
+
+                db.collection('lotto5d').doc('{0}'.format(cur_round)).collection('result').doc('{0}'.format(cur_round))
+
+                    .onSnapshot(function(doc) {
+
+                        if (app_result == false) {
+                            if (doc.get('is_finish') == 0) {
+                                $(".div-result").css("display", "block");
+
+                                $("#round_status").val(1);
+
+                                $('.dot').hide();
+                                $(".dot").text(doc.get('num'));
+
+                                setTimeout(function() {
+
+                                    // $("#SoundNo")[0].play();
+                                    SoundNo.play();
+
+
+                                    $('.dot').show();
+
+                                    $(".div-result-no").text(doc.get('no'));
+                                    $(".div-result-total").text(doc.get('total'));
+                                    $('#keno-key{0}'.format(doc.get('num'))).addClass('active');
+
+                                    bonus = doc.get('bonus');
+                                    bonus_odds = doc.get('bonus_odds');
+                                    if (bonus == null || bonus) {
+                                        $("#range-{0}".format(bonus)).addClass('bonus');
+                                        $("#o{0}".format(bonus)).text('+{0}'.format(parseInt(bonus_odds)));
+                                        // console.log(bonus_odds);
+                                    }
+
+                                }, 1000);
+
+
+                            } else if (doc.get('is_finish') == 1) {
+
+                                $("#round_status").val(1);
+
+                                clearInterval(my_generate_ramdom);
+
+                                ou = doc.get('overunder').toLowerCase();
+                                oe = doc.get('oddeven').toLowerCase();
+                                parlay = doc.get('parlay').toLowerCase();
+                                range = doc.get('range').toLowerCase();
+                                smallest = doc.get('smallest').toLowerCase();
+                                biggest = doc.get('biggest').toLowerCase();
+
+                                fre_1_10 = doc.get('fre-1-10').toLowerCase();
+                                fre_11_20 = doc.get('fre-11-20').toLowerCase();
+                                fre_21_30 = doc.get('fre-21-30').toLowerCase();
+                                fre_31_40 = doc.get('fre-31-40').toLowerCase();
+                                fre_41_50 = doc.get('fre-41-50').toLowerCase();
+                                fre_51_60 = doc.get('fre-51-60').toLowerCase();
+                                fre_61_70 = doc.get('fre-61-70').toLowerCase();
+                                fre_71_80 = doc.get('fre-71-80').toLowerCase();
+
+                                setTimeout(function() {
+
+                                    $("#ou-{0}".format(ou)).addClass('active');
+                                    $("#oe-{0}".format(oe)).addClass('active');
+                                    $("#par-{0}".format(parlay)).addClass('active');
+                                    $("#range-{0}".format(range)).addClass('active');
+                                    $("#small-{0}".format(smallest)).addClass('active');
+                                    $("#big-{0}".format(biggest)).addClass('active');
+
+                                    $("#fre-1-10-{0}".format(fre_1_10)).addClass('active');
+                                    $("#fre-11-20-{0}".format(fre_11_20)).addClass('active');
+                                    $("#fre-21-30-{0}".format(fre_21_30)).addClass('active');
+                                    $("#fre-31-40-{0}".format(fre_31_40)).addClass('active');
+                                    $("#fre-41-50-{0}".format(fre_41_50)).addClass('active');
+                                    $("#fre-51-60-{0}".format(fre_51_60)).addClass('active');
+                                    $("#fre-61-70-{0}".format(fre_61_70)).addClass('active');
+                                    $("#fre-71-80-{0}".format(fre_71_80)).addClass('active');
+
+                                }, 1000);
+
+                                // $("#SoundAfter")[0].play();
+                                SoundAfter.play();
+
+                                // clean_result = false;
+
+                            } else {
+
+                                $(".keno-bet").removeClass('active');
+                                $(".div-result-no").text('0');
+                                $(".div-result-total").text('0');
+                                $(".div-result").css("display", "none");
+                                $("#round_status").val(0);
+
+                                $(".keno-bet").removeClass('bonus');
+                                $('#o210-695').text("");
+                                $('#o696-763').text("");
+                                $('#o764-855').text("");
+                                $('#o856-923').text("");
+                                $('#o924-1410').text("");
+
+                            }
+
+                            app_result = false;
+                        }
+
+                    });
+
+                // end of keno result
+
+
+                // keno winlose
+
+                db.collection('lotto5d').doc('{0}'.format(cur_round)).collection('winlose').doc('{0}'.format(cur_round))
+
+                    .onSnapshot(function(doc) {
+
+                        if (app_winlose == true) {
+                            if (doc.get('status') == 1) {
+                                // console.log(has_bet);
+
+                                if (has_bet == true) {
+                                    update_recent_transaction();
+                                }
+                                auto_refresh_table();
+                            }
+                        }
+                        app_winlose = true;
+
+                    });
+
+                // end of keno winlose
+
+
+            });
+
+
+        db.collection('members').doc('{0}'.format($.cookie("username").toUpperCase()))
+
+            .onSnapshot(function(doc) {
+
+                $("#user-balance").text(financial(doc.get('balance')));
+                $("#outStanding").text(financial(doc.get('outstanding')));
+
+            });
+
+
+        // db.collection('lotto5d').doc('live_setting')
+
+        //   .onSnapshot(function (doc){
+
+        //     if (doc.get('show') == "on")
+        //     {
+        //     $("#divlogo").css("display","none");
+        //     $("#divlive").removeAttr('src');
+        //     $("#history-result-right").css("display","none");
+        //     }
+        //     else{
+        //       $("#divlogo").css("display","block");
+        //     $("#divlive").removeAttr('src');
+        //     $("#divlive").css('width',"0px;");
+        //     $("#divlive").css('height',"0px;");
+        //     $("#history-result-right").css("display","block");
+        //     }
+
+        // });
+    </script>
+
+<script src="/getUsername.js"></script>
+
+
+
+
+</body>
+
+
+</html>

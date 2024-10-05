@@ -1,0 +1,227 @@
+.jqifade {
+    position: absolute;
+    background-color: #FFF
+}
+
+div.jqi {
+    padding-right: 7px;
+    padding-left: 7px;
+    font-size: 13px;
+    padding-bottom: 7px;
+    width: 400px;
+    padding-top: 7px;
+    position: absolute;
+    text-align: left;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 1px solid #999;
+}
+
+div.jqi .jqicontainer {
+    font-weight: bold
+}
+
+div.jqi .jqiclose {
+    font-weight: bold;
+    right: -2px;
+    width: 18px;
+    cursor: default;
+    color: #bbbbbb;
+    position: absolute;
+    top: 4px
+}
+
+div.jqi .jqimessage {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    color: #000;
+    line-height: 20px;
+    padding-top: 10px
+}
+
+div.jqi .jqibuttons {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: right;
+    border: 1px solid #999;
+}
+
+div.jqi button {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom: 3px;
+    margin: 0px 10px;
+    color: #000;
+    padding-top: 3px;
+    background-color: #CCC;
+    border: 1px solid #999;
+}
+
+div.jqi button:hover {
+    background-color: #666
+}
+
+div.jqi button.jqidefaultbutton {
+    background-color: #d8e1f3
+}
+
+.jqiwarning .jqi .jqibuttons {
+    background-color: #d8e1f3
+}
+
+.cleanbluewarning .cleanblue {
+    background-color: #999
+}
+
+.cleanbluefade {
+    position: absolute;
+    background-color: #999
+}
+
+div.cleanblue {
+    font-size: 12px;
+    width: 300px;
+    position: absolute;
+    background-color: #FFF;
+    text-align: left;
+    border: 1px solid #275edf;
+}
+
+div.cleanblue .cleanbluecontainer {
+    padding-right: 5px;
+    border-top: #8000FF 18px solid;
+    padding-left: 5px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #ffffff;
+}
+
+div.cleanblue .cleanblueclose {
+    font-weight: bold;
+    float: right;
+    /*margin: -23px -10px 0px 0px;*/
+    margin: 0px;
+    width: 18px;
+    cursor: default;
+    color: #ffffff;
+}
+
+div.cleanblue .cleanbluemessage {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+    padding-bottom: 10px;
+    color: #000;
+    line-height: 20px;
+    padding-top: 10px
+}
+
+div.cleanblue .cleanbluebuttons {
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    text-align: right;
+    border: none;
+    background-color: #fff;
+}
+
+div.cleanblue button {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom: 3px;
+    margin: 0px 10px;
+    color: #000;
+    padding-top: 3px;
+    background-color: #b4c6e8;
+    border: 1px solid #6076b6;
+}
+
+div.cleanblue button:hover {
+    background-color: #c7d7f6;
+    border: 1px solid #6076b6;
+}
+
+.cleanbluelongwarning .cleanblue {
+    background-color: #acb4c4
+}
+
+.cleanbluelongfade {
+    position: absolute;
+    background-color: #aaaaaa
+}
+
+div.cleanbluelong {
+    font-size: 12px;
+    width: 350px;
+    position: absolute;
+    background-color: #000;
+    text-align: left;
+    border: 1px solid #b4c6e8;
+}
+
+div.cleanbluelong .cleanbluelongcontainer {
+    padding-right: 5px;
+    border-top: #b4c6e8 14px solid;
+    padding-left: 5px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-color: #000
+}
+
+div.cleanbluelong .cleanbluelongclose {
+    font-weight: bold;
+    float: right;
+    margin: -19px -12px 0px 0px;
+    width: 18px;
+    cursor: default;
+    color: #000
+}
+
+div.cleanbluelong .cleanbluelongmessage {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 12px;
+    padding-bottom: 10px;
+    color: #333333;
+    line-height: 20px;
+    padding-top: 10px;
+}
+
+div.cleanbluelong .cleanbluelongbuttons {
+    border-right: #eeeeee 1px solid;
+    padding-right: 0px;
+    border-top: #eeeeee 1px solid;
+    padding-left: 0px;
+    padding-bottom: 5px;
+    border-left: #eeeeee 1px solid;
+    padding-top: 5px;
+    border-bottom: #eeeeee 1px solid;
+    background-color: #f4f4f4;
+    text-align: right
+}
+
+div.cleanbluelong button {
+    padding-right: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    padding-bottom: 3px;
+    margin: 0px 10px;
+    color: #FFF;
+    padding-top: 3px;
+    background-color: #CCC
+}
+
+div.cleanbluelong button:hover {
+    border: 1px solid #999;
+}

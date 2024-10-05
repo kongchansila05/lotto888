@@ -1,0 +1,311 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <input type="hidden" name="csrfmiddlewaretoken" value="YRrmwiI6FKpASv1sokpgWcYM4lfzXUbSDoxJ89M3480BwLJNadLjsjEjKRRauDjE">
+
+    <link rel="shortcut icon" type="image/png" href="/static-password/user_portal/assets/ico.png">
+
+    <title>LOTTO8888</title>
+    <link rel="icon" type="image/x-icon" href="/images/lotto8888.icon">
+
+
+    <link rel="stylesheet" href='/static-password/user_portal/css/style.css' type="text/css" />
+    <link type="text/css" rel="stylesheet" href="/static-password/lotto/css/mreset.css">
+    <link type="text/css" rel="stylesheet" href="/static-password/lotto/css/style.css?ver=11adfasfas" rel="stylesheet">
+    <!--<link rel="stylesheet" href='/static-password/lotto/css/keno.css?ver=12' type="text/css" />-->
+    <script src="/static-password/lotto/js/jquery-2.1.4.min.js"></script>
+    <script src="/static-password/lotto/js/jquery.cookie.js"></script>
+
+
+    <link rel='stylesheet' href='/static-password/user_portal/css/calendar.css'>
+    <link rel='stylesheet' href='/static-password/user_portal/css/animate.min.css'>
+    <link rel='stylesheet' href='/static-password/user_portal/css/loading.css'>
+    <link rel='stylesheet' href='/static-password/user_portal/css/clean-blue.css'>
+    <link rel='stylesheet' href='/static-password/user_portal/css/jquery-impromptu.min.css'>
+    <link rel='stylesheet' href='/static-password/user_portal/css/impromptu.css'>
+
+    <script src='/static-password/user_portal/js/jquery-1.10.2.js'></script>
+    <script src='/static-password/user_portal/js/jquery.min.js'></script>
+    <script src='/static-password/user_portal/js/jquery-cookie.js'></script>
+    <script src='/static-password/user_portal/js/jquery-impromptu.min.js'></script>
+    <script src='/static-password/user_portal/js/utils.js?ver=33333'></script>
+    <script src='/static-password/user_portal/js/printThis.js'></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-firestore.js"></script>
+
+    <script src="/static-password/lotto/js/_v7_common.js"></script>
+    <script src="/static-password/lotto/js/_baccarat_road.js"></script>
+    <script src="/static-password/lotto/js/_livecasino_baccarat_h5.js"></script>
+    <script src="/static-password/lotto/js/core.min.js"></script>
+    <script src="/static-password/lotto/js/chili.js"></script>
+    <script src="/static-password/lotto/js/gamescommon.js"></script>
+
+    <script src='/static-password/lotto/js/howler.js'></script>
+
+    <script>
+        api = "https://api-keno.sbc369.asia/api/";
+        env = "PROD";
+        currency = "KHR";
+
+        var firebaseConfig;
+
+        if (env == 'DEV')
+
+            firebaseConfig = {
+                apiKey: "AIzaSyAYD5mJTSsggpFqTcr8tFOmaGrHYCWKG-Y",
+                authDomain: "cocks-dev.firebaseapp.com",
+                databaseURL: "https://cocks-dev.firebaseio.com",
+                projectId: "cocks-dev",
+                storageBucket: "cocks-dev.appspot.com",
+                messagingSenderId: "1006353546625",
+                appId: "1:1006353546625:web:9da95dc67c2311e833bc80"
+            };
+        else {
+            firebaseConfig = {
+                apiKey: "AIzaSyDzltYo6-B7wZywYese5MWKgPvaK2sD6lY",
+                authDomain: "cocks-43140.firebaseapp.com",
+                databaseURL: "https://cocks-43140.firebaseio.com",
+                projectId: "cocks-43140",
+                storageBucket: "cocks-43140.appspot.com",
+                messagingSenderId: "107519811824",
+                appId: "1:107519811824:web:2ee1b87a146b17a0"
+            };
+        }
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        db = firebase.firestore();
+
+        db.collection('members').doc('{0}'.format($.cookie("username").toUpperCase()))
+
+            .onSnapshot(function(doc) {
+
+                $("#balance").text(financial(doc.get('balance')) + " (KHR)");
+
+            });
+
+
+
+        var SoundBefore = new Howl({
+            src: ['/static-password/lotto/sound/prepare_new.mp3'],
+        });
+        var SoundNo = new Howl({
+            src: ['/static-password/lotto/sound/sound_no_new.mp3'],
+        });
+        var SoundAfter = new Howl({
+            src: ['/static-password/lotto/sound/after_new.mp3'],
+        });
+        // var SoundBonus = new Howl({ src: ['/static-password/lotto/sound/lotto_bonus.mp3'],});
+    </script>
+
+
+    <!-- <link rel='stylesheet' href="/static-password/user_portal/css/datepicker.min.css"> -->
+    <!-- <link rel='stylesheet' href='/static-password/user_portal/css/calendar.css'> -->
+
+
+
+</head>
+
+<body>
+
+    <div id="betLoading" class="loading" style="display:none">Loading&#8230;</div>
+
+    <div>
+
+        <!--      <audio controls id="SoundBefore" style="display:none">-->
+        <!-- 		<source src="/static-password/lotto/sound/prepare_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+        <!--<audio controls id="SoundNo" style="display:none">-->
+        <!-- 		<source src="/static-password/lotto/sound/sound_no_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+        <!--<audio controls id="SoundAfter" style="display:none">-->
+        <!-- 		<source src="/static-password/lotto/sound/after_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+
+        <div id="main">
+
+            <div style="display:none;">
+                <div class="invoice"></div>
+            </div>
+
+            <!-- Header Section -->
+            <table border="0" cellpadding="0" cellspacing="0" id="header" style="width:100%;min-width:1736px">
+                <tbody>
+                    <tr>
+                        <td class="logo" rowspan="2" style="padding-top:0px;box-sizing:content-box;">
+                            <div><img src="/images/logo.png" class="login_icons" /></div>
+                        </td>
+                        <td height="50">
+                            <div class="user_wel">
+                                Welcome,<span id="spanLoginID"></span><span id="balance" style="padding-left:5px;color:#1F87CC;font-weight: bold;"></span>
+                            </div>
+
+                            <ul class="lang">
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('en')">English</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('kh')">ខ្មែរ</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('th')">ไทย</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('vn')">Tiếng Việt</a></li>
+
+                            </ul>
+                        </td>
+                        <td class="logout" rowspan="2" id="tdLiveChat">
+                            <a href="/" class="btn_logout" style="color: #fff; padding: 20px; cursor: pointer;">Logout</a>
+                        </td>
+                    </tr>
+                    <!-- Text Maquess -->
+                    <tr>
+                        <td class="marquee" id="mar_news">
+                            <marquee direction="left" id="spShowNews" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+                                សូមស្វាគមន័មកកាន់ឡូតូ8888 ជូនពរសំណាងល្អរៀងរាល់ថ្ងៃ
+                            </marquee>
+                        </td>
+                    </tr>
+                    <!-- // text Maquse-->
+
+                </tbody>
+            </table>
+            <!--  // Header Section -->
+            <!-- main menu -->
+            <div id="navigator" style="width:100%;min-width:1736px">
+                <ul class="nav" id="nav">
+
+                    <li><a id="tabhome" href="/home/">ដំណឹង</a></li>
+                    <li> <a id="tablotto" href="/lotto/">ឡូតូ</a></li>
+                    <li><a id="tabbalance" href="/sport/balance/">តុល្យភាព</a></li>
+                    <li><a id="tabstatement" href="/sport/statement/">របាយការណ៏</a></li>
+                    <li><a id="tabpassword" href="/sport/password/">លេខសម្ងាត់ </a></li>
+
+                </ul>
+            </div>
+            <!-- // main menu -->
+
+        </div>
+
+        <div class="main-content" id="main-content" style="position:relative;">
+
+
+
+            <!-- sub menu of sport -->
+            <!--<div id="navigator">-->
+            <!--        <ul class="sub">-->
+            <!--            <li><a href="/sport/">Sports</a></li>-->
+            <!--            <li><a href="/sport/parlay">Parlay</a></li>-->
+            <!--            <li><a href="#">Quick</a></li>-->
+            <!--            <li><a href="#">Bet List</a></li>-->
+            <!--            <li><a href="#">Cancel List</a></li>-->
+            <!--            <li><a href="/sport/report/">Win Report</a></li>-->
+            <!--            <li><a href="/sport/result/">Result</a></li>-->
+            <!--        </ul>-->
+            <!--    </div>-->
+            <!-- sub menu of sport -->
+            <div style="-moz-user-select: none;">
+                <div class="content-password">
+                    <div class="tableName">Change your password</div>
+                    <form id="form1" name="form1">
+                        <table border="0" cellpadding="0" cellspacing="1" class="main_table2">
+                            <tbody>
+
+                                <!--<tr>-->
+                                <!--    <td nowrap="" class="main_table_odd2">Your Password</td>-->
+                                <!--    <td nowrap="" class="main_table_odd3">-->
+                                <!--        <input id="txtYourPassword" type="password" name="your_password" require="true" maxlength="24" class="input3">-->
+                                <!--        <span class="valid_msg msg_yourpassword"></span>-->
+                                <!--    </td>-->
+                                <!--</tr>-->
+
+                                <tr>
+                                    <td nowrap="" class="main_table_even2">New Password</td>
+                                    <td nowrap="" class="main_table_even3">
+                                        <input id="txtPassword" name="new_password" type="password" require="true" maxlength="24" class="input3">
+                                        <span class="valid_msg msg_password"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td nowrap="" class="main_table_odd2">Confirm Password</td>
+                                    <td nowrap="" class="main_table_odd3">
+                                        <input id="txtConfirmPassword" type="password" require="true" maxlength="24" class="input3">
+                                        <span class="valid_msg msg_confirmpassword"></span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table border="0" cellpadding="0" cellspacing="1" style="font-size: 12px;">
+                            <tbody>
+                                <tr>
+                                    <td width="290">&nbsp;</td>
+                                    <td width="84">
+                                        <input type="button" id="btnConfirm" class="button1" value="Confirm" onclick="doSubmit()"></td>
+                                    <td width="72">
+                                        <input type="button" id="btnCancel" class="button1" value="Clear" onclick="doClear()"></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3">&nbsp;</td>
+                                </tr>
+                                <tr class="main_table_odd2">
+                                    <td colspan="3">&nbsp; Note:</td>
+                                </tr>
+                                <tr class="main_table_odd2">
+                                    <td colspan="3">&nbsp; 1. New password can not be as same as the login ID;</td>
+                                </tr>
+                                <tr class="main_table_odd2">
+                                    <td colspan="3" style="width:446px;padding:2px 0 2px 0;">&nbsp; 2. New password should be composed by 1 letter and 1 digit at least, and should not less than 6 bits.</td>
+                                </tr>
+                                <tr class="main_table_odd2">
+                                    <td colspan="3" style="width:446px;padding:2px 0 2px 0;">&nbsp;3. New password can not be too simple, such as aaaa1111.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+
+
+            <div id="divLoadingCircle" class="loading" style="display:none">Loading&#8230;</div>
+
+            <div id="divLoading" style="display: none;"><img src="/static-password/user_portal/assets/loadingAnimation.gif"></div>
+
+            <div id="footer" style="z-index:5">
+                
+                <p class="copyright">© Copyright 2020 Lotto8888, All rights reserved </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src='/static-password/user_portal/js/moment.js'></script>
+    <script src='/static-password/user_portal/js/default.js'></script>
+    <script src='/static-password/user_portal/js/jquery.noty.packaged.min.js'></script>
+
+    <script src="/static-password/user_portal/js/js.cookie.js" type="text/javascript"></script>
+    <script src='/static-password/user_portal/js/language.js?ver=5'></script>
+
+
+    <script>
+        var lang = "en";
+        api = "https://api-keno.sbc369.asia/api/";
+        $('#navigator .nav').removeClass('hover');
+        $('#tabpassword').addClass("hover");
+    </script>
+    <script src="/static-password/user_portal/js/password.js" type="text/javascript"></script>
+
+    <script src="/getUsername.js"></script>
+
+</body>
+
+
+</html>

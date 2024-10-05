@@ -1,0 +1,272 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <input type="hidden" name="csrfmiddlewaretoken" value="FsHL02TX3PQgv8TUx0xnJArjgKB8weL1kZN8CTXUsdrh9oBfjTTqfH7QWgdJ3XTN">
+    <title>LOTTO8888</title>
+    <!-- <link rel="shortcut icon" type="image/png" href="/static-home/user_portal/assets/ico.png"> -->
+
+    <link rel="shortcut icon" type="image/png" href="/images/lotto88881.png">
+    <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
+
+
+    <link rel="stylesheet" href='/static-home/user_portal/css/style.css' type="text/css" />
+    <link type="text/css" rel="stylesheet" href="/static-home/lotto/css/mreset.css">
+    <link type="text/css" rel="stylesheet" href="/static-home/lotto/css/style.css?ver=11adfasfas" rel="stylesheet">
+    <!--<link rel="stylesheet" href='/static-home/lotto/css/keno.css?ver=12' type="text/css" />-->
+    <script src="/static-home/lotto/js/jquery-2.1.4.min.js"></script>
+    <script src="/static-home/lotto/js/jquery.cookie.js"></script>
+
+
+    <link rel='stylesheet' href='/static-home/user_portal/css/calendar.css'>
+    <link rel='stylesheet' href='/static-home/user_portal/css/animate.min.css'>
+    <link rel='stylesheet' href='/static-home/user_portal/css/loading.css'>
+    <link rel='stylesheet' href='/static-home/user_portal/css/clean-blue.css'>
+    <link rel='stylesheet' href='/static-home/user_portal/css/jquery-impromptu.min.css'>
+    <link rel='stylesheet' href='/static-home/user_portal/css/impromptu.css'>
+
+    <script src='/static-home/user_portal/js/jquery-1.10.2.js'></script>
+    <script src='/static-home/user_portal/js/jquery.min.js'></script>
+    <script src='/static-home/user_portal/js/jquery-cookie.js'></script>
+    <script src='/static-home/user_portal/js/jquery-impromptu.min.js'></script>
+    <script src='/static-home/user_portal/js/utils.js?ver=33333'></script>
+    <script src='/static-home/user_portal/js/printThis.js'></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.1/firebase-firestore.js"></script>
+
+    <script src="/static-home/lotto/js/_v7_common.js"></script>
+    <script src="/static-home/lotto/js/_baccarat_road.js"></script>
+    <script src="/static-home/lotto/js/_livecasino_baccarat_h5.js"></script>
+    <script src="/static-home/lotto/js/core.min.js"></script>
+    <script src="/static-home/lotto/js/chili.js"></script>
+    <script src="/static-home/lotto/js/gamescommon.js"></script>
+
+    <script src='/static-home/lotto/js/howler.js'></script>
+
+    <script>
+        api = "https://api-keno.sbc369.asia/api/";
+        env = "PROD";
+        currency = "KHR";
+
+        var firebaseConfig;
+
+        if (env == 'DEV')
+
+            firebaseConfig = {
+                apiKey: "AIzaSyAYD5mJTSsggpFqTcr8tFOmaGrHYCWKG-Y",
+                authDomain: "cocks-dev.firebaseapp.com",
+                databaseURL: "https://cocks-dev.firebaseio.com",
+                projectId: "cocks-dev",
+                storageBucket: "cocks-dev.appspot.com",
+                messagingSenderId: "1006353546625",
+                appId: "1:1006353546625:web:9da95dc67c2311e833bc80"
+            };
+        else {
+            firebaseConfig = {
+                apiKey: "AIzaSyDzltYo6-B7wZywYese5MWKgPvaK2sD6lY",
+                authDomain: "cocks-43140.firebaseapp.com",
+                databaseURL: "https://cocks-43140.firebaseio.com",
+                projectId: "cocks-43140",
+                storageBucket: "cocks-43140.appspot.com",
+                messagingSenderId: "107519811824",
+                appId: "1:107519811824:web:2ee1b87a146b17a0"
+            };
+        }
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        db = firebase.firestore();
+
+        db.collection('members').doc('{0}'.format($.cookie("username").toUpperCase()))
+
+            .onSnapshot(function(doc) {
+
+                $("#balance").text(financial(doc.get('balance')) + " (KHR)");
+
+            });
+
+
+
+        var SoundBefore = new Howl({
+            src: ['/static-home/lotto/sound/prepare_new.mp3'],
+        });
+        var SoundNo = new Howl({
+            src: ['/static-home/lotto/sound/sound_no_new.mp3'],
+        });
+        var SoundAfter = new Howl({
+            src: ['/static-home/lotto/sound/after_new.mp3'],
+        });
+        // var SoundBonus = new Howl({ src: ['/static-home/lotto/sound/lotto_bonus.mp3'],});
+    </script>
+
+
+
+
+</head>
+
+<body>
+
+    <div id="betLoading" class="loading" style="display:none">Loading&#8230;</div>
+
+    <div>
+
+        <!--      <audio controls id="SoundBefore" style="display:none">-->
+        <!-- 		<source src="/static-home/lotto/sound/prepare_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+        <!--<audio controls id="SoundNo" style="display:none">-->
+        <!-- 		<source src="/static-home/lotto/sound/sound_no_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+        <!--<audio controls id="SoundAfter" style="display:none">-->
+        <!-- 		<source src="/static-home/lotto/sound/after_new.mp3" type="audio/mpeg">-->
+        <!--</audio>-->
+
+
+        <div id="main">
+
+            <div style="display:none;">
+                <div class="invoice"></div>
+            </div>
+
+            <!-- Header Section -->
+            <table border="0" cellpadding="0" cellspacing="0" id="header" style="width:100%;min-width:1736px">
+                <tbody>
+                    <tr>
+                        <td class="logo" rowspan="2" style="padding-top:0px;box-sizing:content-box;">
+                            <div><img src="/images/logo.png" class="login_icons" /></div>
+                        </td>
+                        <td height="50">
+                            <div class="user_wel">
+                                Welcome,<span id="spanLoginID"></span><span id="balance" style="padding-left:5px;color:#1F87CC;font-weight: bold;"></span>
+                            </div>
+
+                            <ul class="lang">
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('en')">English</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('kh')">ខ្មែរ</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('th')">ไทย</a></li>
+
+                                <li><a href="javascript:void(0)" onclick="switch_language('vn')">Tiếng Việt</a></li>
+
+                            </ul>
+                        </td>
+                        <td class="logout" rowspan="2" id="tdLiveChat">
+                            <a href="/" class="btn_logout" style="color: #fff; padding: 20px; cursor: pointer;">Logout</a>
+                        </td>
+                    </tr>
+                    <!-- Text Maquess -->
+                    <tr>
+                        <td class="marquee" id="mar_news">
+                            <marquee direction="left" id="spShowNews" scrollamount="3" onmouseover="this.stop()" onmouseout="this.start()">
+                                សូមស្វាគមន័មកកាន់ឡូលូ 5D ជូនពរសំណាងល្អរៀងរាល់ថ្ងៃ
+                            </marquee>
+                        </td>
+                    </tr>
+                    <!-- // text Maquse-->
+
+                </tbody>
+            </table>
+            <!--  // Header Section -->
+            <!-- main menu -->
+            <div id="navigator" style="width:100%;min-width:1736px">
+                <ul class="nav" id="nav">
+
+                    <li><a id="tabhome" href="/home/">ដំណឹង</a></li>
+                    <li> <a id="tablotto" href="/lotto/">ឡូតូ</a></li>
+                    <li><a id="tabbalance" href="/sport/balance/">តុល្យភាព</a></li>
+                    <li><a id="tabstatement" href="/sport/statement/">របាយការណ៏</a></li>
+                    <li><a id="tabpassword" href="/sport/password/">លេខសម្ងាត់ </a></li>
+
+                </ul>
+            </div>
+            <!-- // main menu -->
+
+        </div>
+
+        <div class="main-content" id="main-content" style="position:relative;">
+
+
+
+            <div class="main_content_news">
+
+                <div id="right">
+                    <table border="0" cellpadding="0" cellspacing="3" class="control_table" width="800">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    Content&nbsp;
+                                    <input id="txtContent" type="text" size="20" class="input4" onchange="changeWord2(query, 'content', this)">&nbsp;&nbsp;
+                                    <input id="btnSearch" type="button" class="button1" value="Search" onclick="disableBtn(this);_getNewsList();">&nbsp;&nbsp;
+                                    <input id="btnNew" type="button" class="button1" onclick="_eventEditNews()" value="New" style="display:none">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div id="divLoading" style="display: none;"><img src="images/loadingAnimation.gif"></div>
+                    <div id="divNews">
+                        <table id="tblNews" border="1" cellpadding="0" cellspacing="0" class="main_table" style="min-width:1200px;">
+                            <thead>
+                                <tr class="main_table_header">
+                                    <th rowspan="0" class="main_table_header0">No</th>
+                                    <th rowspan="0" class="main_table_header0">Date</th>
+                                    <th rowspan="0" class="main_table_header0">Content</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div id="divLoadingCircle" class="loading" style="display:none">Loading&#8230;</div>
+
+                <div id="divLoading" style="display: none;"><img src="/static-home/user_portal/assets/loadingAnimation.gif"></div>
+
+                <div id="footer" style="z-index:5">
+                    
+                    <p class="copyright">© Copyright 2020 Lotto8888, All rights reserved </p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <script src='/static-home/user_portal/js/moment.js'></script>
+        <script src='/static-home/user_portal/js/default.js'></script>
+        <script src='/static-home/user_portal/js/jquery.noty.packaged.min.js'></script>
+
+        <script src="/static-home/user_portal/js/js.cookie.js" type="text/javascript"></script>
+        <script src='/static-home/user_portal/js/language.js?ver=5'></script>
+
+
+
+        <script>
+            api = "https://api-keno.sbc369.asia/api/";
+
+            $('#navigator .nav').removeClass('hover');
+            $('#tabhome').addClass("hover");
+        </script>
+
+<script src="/getUsername.js"></script>
+
+
+</body>
+
+
+</html>
